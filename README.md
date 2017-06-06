@@ -1,2 +1,2 @@
 # projectv
-Academic system for versity
+Academic system for versity in LARAVEL
