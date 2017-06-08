@@ -52,7 +52,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <div class="container">
         <div class="row">
             <div class="well">
-                <h2>WELL COME TO WEBSITE ...LOGIN IF YOU ARE ADMIN</h2>
+                <h2>WELL COME TO WEBSITE</h2>
             </div>
 
             </div>
