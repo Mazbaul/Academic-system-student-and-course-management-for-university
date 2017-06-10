@@ -17,14 +17,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/user/logout', 'LoginController@userLogout');
+Route::get('/user/login', 'Auth\LoginController@showLoginForm');
+Route::post('/user/login', 'Auth\LoginController@login');
+Route::get('/user/logout', 'Auth\LoginController@userLogout');
+
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-
+    Route::get('/notice', 'NoticeController@index')->name('admin.notice');
 });
 
 Route::group(['middleware' => 'auth'], function () {
