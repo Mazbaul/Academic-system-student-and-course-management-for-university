@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Notice;
 use Illuminate\Http\Request;
 
 /**
@@ -34,5 +35,34 @@ class NoticeController extends Controller
     public function index()
     {
         return view('adminlte::notice.notice_home');
+
     }
+
+public function create(){
+
+}
+
+
+public function store(Request $request){
+  $this->validate($request, array(
+            'notice'=>'required'
+
+
+
+  ));
+
+    $notice = new Notice();
+    $notice->notice = $request->notice;
+
+    $notice->save();
+
+    return redirect()->route('admin.notice');
+
+}
+
+public function show(){
+
+
+}
+
 }

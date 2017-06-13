@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-
 Route::get('/home', 'HomeController@index');
-
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
@@ -25,6 +23,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
     Route::get('/notice', 'NoticeController@index')->name('admin.notice');
+    Route::post('/notice', 'NoticeController@store')->name('admin.notice.submit');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {

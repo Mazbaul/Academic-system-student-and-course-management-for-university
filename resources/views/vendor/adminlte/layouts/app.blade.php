@@ -40,7 +40,7 @@ desired effect
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-        @include('adminlte::layouts.partials.contentheader')
+
 
         <!-- Main content -->
         <section class="content">
