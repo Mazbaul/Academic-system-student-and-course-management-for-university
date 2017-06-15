@@ -2,6 +2,7 @@
 
 
 @section('main-content')
+   <div class="container">
     <div class="container" >
        <div class="row">
            <section class="content-header">
@@ -24,7 +25,6 @@
 
         </div>
 
-
     </div>
     <form action="{{ route('admin.notice') }}" method="post">
         <div class="form-group has-feedback">
@@ -37,6 +37,6 @@
         </div>
     </form>
 
-
+</div>
 
 @endsection

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Notice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 /**
  * Class HomeController
@@ -34,12 +35,12 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        return view('adminlte::notice.notice_home');
+
 
     }
 
 public function create(){
-
+    return view('adminlte::notice.notice_home');
 }
 
 
@@ -55,13 +56,14 @@ public function store(Request $request){
     $notice->notice = $request->notice;
 
     $notice->save();
-
-    return redirect()->route('admin.notice');
+    Session::flash('success','Notice published Succesfully');
+    return redirect()->route('admin.show',$notice->id);
 
 }
 
-public function show(){
-
+public function show($id){
+  $notice=Notice::find($id);
+    return view('adminlte::notice.show')->withNotice($notice);
 
 }
 
