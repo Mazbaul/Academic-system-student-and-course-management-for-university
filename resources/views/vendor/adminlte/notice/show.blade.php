@@ -22,9 +22,9 @@
                        <tbody>
 
                            <tr>
-                               
 
-                               <td>{{$notice->notice}}</td>
+
+                               <pre>{{$notice->notice}}</pre>
 
 
                            </tr>
