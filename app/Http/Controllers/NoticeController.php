@@ -47,6 +47,7 @@ public function create(){
 
 public function store(Request $request){
   $this->validate($request, array(
+            'tittle'=>'required',
             'notice'=>'required'
 
 
@@ -54,6 +55,7 @@ public function store(Request $request){
   ));
 
     $notice = new Notice();
+    $notice->tittle = $request->tittle;
     $notice->notice = $request->notice;
 
     $notice->save();

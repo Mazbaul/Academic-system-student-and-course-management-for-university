@@ -9,6 +9,7 @@ class Notice extends Model
 {
     protected $guard='admin';
     protected $fillable = [
+             'tittle',
              'notice',
 ];
 }

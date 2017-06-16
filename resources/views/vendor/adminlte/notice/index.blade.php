@@ -28,7 +28,7 @@
                    @foreach($notice as $notice)
                        <tr>
                            <th>{{$notice->id}}</th>
-                           <td>{{$notice->tittle}}</td>
+                           <td><pre>{{$notice->tittle}}</pre></td>
                            <td><pre>{{substr($notice->notice,0,50)}}{{strlen($notice->notice)>50 ?"..........." :""}}</pre></td>
                            <td>{{date('M j, Y',strtotime($notice->created_at))}}</td>
                            <td><a href="{{route('admin.show',$notice->id)}}" class="btn btn-sm btn-default">VIEW</a> </td>
