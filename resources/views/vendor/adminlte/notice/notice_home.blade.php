@@ -2,25 +2,22 @@
 
 
 @section('main-content')
-   <div class="container">
-    <div class="container" >
+
+
        <div class="row">
            <section class="content-header">
               <h1 style="text-align: center;">
-               NOTICE BOARD
+               CREATE NEW NOTICE
               </h1>
 
             </section>
        </div>
-    </div>
+
 
     <div class="container" style="margin-bottom: 10px">
         <div class="row">
             <div class="col-md-4">
 
-            </div>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Previous Notices</button>
             </div>
 
         </div>
@@ -37,6 +34,6 @@
         </div>
     </form>
 
-</div>
+
 
 @endsection

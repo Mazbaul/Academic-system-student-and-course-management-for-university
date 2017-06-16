@@ -22,7 +22,8 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-    Route::get('/notice', 'NoticeController@create')->name('admin.notice');
+    Route::get('/notice', 'NoticeController@index')->name('admin.notice');
+    Route::get('/notice/create', 'NoticeController@create')->name('admin.notice.create');
     Route::post('/notice', 'NoticeController@store')->name('admin.notice.submit');
     Route::get('/notice/show/{Notice}', 'NoticeController@show')->name('admin.show');
 

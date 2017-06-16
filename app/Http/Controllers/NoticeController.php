@@ -35,7 +35,8 @@ class NoticeController extends Controller
      */
     public function index()
     {
-
+        $notice=Notice::all();
+        return view('adminlte::notice.index')->withNotice($notice);
 
     }
 

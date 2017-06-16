@@ -14,7 +14,7 @@
 
         </div>
        <div>
-           <h1>{{$notice->created_at}}</h1>
+           <h1>Published at  {{date('M j, Y',strtotime($notice->created_at))}}</h1>
            <h1>{{$notice->notice}}</h1>
 
 
