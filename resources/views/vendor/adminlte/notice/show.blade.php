@@ -15,8 +15,25 @@
         </div>
        <div>
            <h1>Published at  {{date('M j, Y',strtotime($notice->created_at))}}</h1>
-           <h1>{{$notice->notice}}</h1>
+           <div class="row">
+               <div class="col-md-12">
+                   <table class="table">
 
+                       <tbody>
+
+                           <tr>
+                               
+
+                               <td>{{$notice->notice}}</td>
+
+
+                           </tr>
+
+
+                       </tbody>
+
+                   </table>
+               </div>
 
        </div>
     @endsection
