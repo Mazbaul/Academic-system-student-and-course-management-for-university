@@ -26,8 +26,15 @@
     <form action="{{ route('admin.notice') }}" method="post">
         <div class="form-group has-feedback">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="text" class="form-control" placeholder="Tittle of you notice" name="tittle"/>
-            <textarea  class="form-control" placeholder="Type your notice" name="notice" rows="9"  autofocus></textarea>
+
+            <div>
+                <label for="tittle" class="control-label">Tittle Of Notice :</label>
+                <input type="text" class="form-control" placeholder="Tittle of you notice" name="tittle"/>
+            </div>
+            <div>
+                <label for="notice" class="control-label">Notice :</label>
+                <textarea  class="form-control" placeholder="Type your notice" name="notice" rows="9"  autofocus></textarea>
+            </div>
 
         </div>
         <div>
