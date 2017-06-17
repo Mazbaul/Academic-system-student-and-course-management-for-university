@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('user.dashboard');
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
@@ -29,7 +29,8 @@ Route::prefix('admin')->group(function() {
 
 });
 
-Route::group(['middleware' => 'auth:web'], function () {
+
+Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware
 //    });
