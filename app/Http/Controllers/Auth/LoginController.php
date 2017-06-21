@@ -20,19 +20,14 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers {
-        attemptLogin as attemptLoginAtAuthenticatesUsers;
-    }
+    use AuthenticatesUsers ;
 
     /**
      * Show the application's login form.
      *
      * @return \Illuminate\Http\Response
      */
-    public function showLoginForm()
-    {
-        return view('adminlte::auth.login');
-    }
+
 
     /**
      * Where to redirect users after login.
@@ -48,7 +43,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:web', ['except' => ['logout','userLogout']]);
+        $this->middleware('guest', ['except' => ['logout']]);
     }
 
     /**
@@ -56,9 +51,10 @@ class LoginController extends Controller
      *
      * @return string
      */
-    public function username()
+    public function showLoginForm()
     {
-        return config('auth.providers.users.field','email');
+        return view('adminlte::auth.login');
+
     }
 
     /**
@@ -67,32 +63,11 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return bool
      */
-    protected function attemptLogin(Request $request)
-    {
-        if ($this->username() === 'email') return $this->attemptLoginAtAuthenticatesUsers($request);
-        if ( ! $this->attemptLoginAtAuthenticatesUsers($request)) {
-            return $this->attempLoginUsingUsernameAsAnEmail($request);
-        }
-        return false;
-    }
-
-    /**
-     * Attempt to log the user into application using username as an email.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return bool
-     */
-    protected function attempLoginUsingUsernameAsAnEmail(Request $request)
-    {
-        return $this->guard('web')->attempt(
-            ['email' => $request->input('username'), 'password' => $request->input('password')],
-            $request->has('remember'));
-    }
     public function login(Request $request)
     {
         // Validate the form data
         $this->validate($request, [
-            'email'   => 'required|email',
+            'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
 
@@ -101,16 +76,15 @@ class LoginController extends Controller
             // if successful, then redirect to their intended location
             return redirect()->intended(route('user.dashboard'));
         }
-
-        // if unsuccessful, then redirect back to the login with the form data
-        return redirect()->back()->withInput($request->only('email', 'remember'));
     }
-    public function userLogout()
-    {
+    /**
+     * Attempt to log the user into application using username as an email.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return bool
+     */
 
-           Auth::guard('web')->logout();
-           return redirect('/');
 
-    }
+
 
 }
