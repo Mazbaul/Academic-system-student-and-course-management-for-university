@@ -47,7 +47,7 @@ class AdminLoginController extends Controller
             $request->has('remember'));
     }
 
-    public function login(Request $request)
+    public function adminlogin(Request $request)
     {
         // Validate the form data
         $this->validate($request, [
@@ -64,7 +64,7 @@ class AdminLoginController extends Controller
         // if unsuccessful, then redirect back to the login with the form data
         return redirect()->back()->withInput($request->only('email', 'remember'));
     }
-    public function logout()
+    public function adminlogout()
     {
         Auth::guard('admin')->logout();
         return redirect('/');
