@@ -41,7 +41,7 @@ class UserController extends Controller
     }
 
     public function create(){
-        return view('adminlte::user.user_home');
+        return view('adminlte::user.create_user');
     }
 
 

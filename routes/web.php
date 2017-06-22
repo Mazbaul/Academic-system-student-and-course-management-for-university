@@ -27,6 +27,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/notice/create', 'NoticeController@create')->name('admin.notice.create');
     Route::post('/notice', 'NoticeController@store')->name('admin.notice.submit');
     Route::get('/notice/show/{Notice}', 'NoticeController@show')->name('admin.show');
+    Route::resource('/users', 'UserController');
 
 });
 
