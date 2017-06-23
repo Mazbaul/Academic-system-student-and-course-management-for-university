@@ -4,32 +4,17 @@
 @section('main-content')
 
 
-       <div class="row">
-           <section class="content-header">
-              <h1 style="text-align: center;">
-               CREATE NEW NOTICE
-              </h1>
-
-            </section>
-       </div>
-
-
-    <div class="container" style="margin-bottom: 10px">
-        <div class="row">
-            <div class="col-md-4">
-
-            </div>
-
-        </div>
-
-    </div>
-    <form action="{{ route('admin.notice') }}" method="post">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>Create New Post</h1>
+            <hr>
+    <form action="{{ route('user.create') }}" method="post">
         <div class="form-group has-feedback">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div>
-                <label for="tittle" class="control-label">Tittle Of Notice :</label>
-                <input type="text" class="form-control" placeholder="Tittle of you notice" name="tittle"/>
+                <label for="name" class="control-label">Tittle Of Notice :</label>
+                <input type="text" class="form-control" placeholder="Name of the Student" name="name"/>
             </div>
             <div>
                 <label for="notice" class="control-label">Notice :</label>
@@ -42,6 +27,7 @@
         </div>
     </form>
 
-
+        </div>
+    </div>
 
 @endsection
