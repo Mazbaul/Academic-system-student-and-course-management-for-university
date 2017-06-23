@@ -41,7 +41,7 @@ class UserController extends Controller
     }
 
     public function create(){
-        return view('adminlte::user.create_user');
+        return view('adminlte::user.create_student');
     }
 
 
@@ -65,8 +65,8 @@ class UserController extends Controller
     }
 
     public function show($id){
-        $notice=Notice::find($id);
-        return view('adminlte::notice.show')->withNotice($notice);
+        $user=User::Where('department_id','=',$id)->get();
+        return view('adminlte::user.show')->withUser($user);
 
     }
 

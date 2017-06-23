@@ -22,14 +22,17 @@
                 <thead>
 
                 <th>Department Name</th>
+                <th>Total Student</th>
+
                 <th></th>
                 </thead>
                 <tbody>
                 @foreach($user as $user)
                     <tr>
                         <th>{{$user->department->name}}</th>
+                        <th>{{$user->department()->count()}}</th>
 
-                        <td><a href="{{route('users.show',$user->department_id)}}" class="btn btn-sm btn-default">VIEW ALL STUDENT</a> </td>
+                        <td><a href="{{route('users.show',$user->department->id)}}" class="btn btn-sm btn-default">VIEW ALL STUDENT</a> </td>
                     </tr>
                 @endforeach
 

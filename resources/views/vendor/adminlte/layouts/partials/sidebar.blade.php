@@ -35,6 +35,7 @@
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('/admin') }}"> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li><a href="{{ url('/admin/notice') }}"><span>Notices</span></a></li>
+            <li><a href="{{ url('/admin/users') }}"><span>Students</span></a></li>
         <!-- <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
