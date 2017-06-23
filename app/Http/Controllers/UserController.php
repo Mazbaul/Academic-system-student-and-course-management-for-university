@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\User;
+use App\Department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -41,26 +42,37 @@ class UserController extends Controller
     }
 
     public function create(){
-        return view('adminlte::user.create_student');
+        $departments= Department::all();
+        return view('adminlte::user.create_student')->withDepartments($departments);
     }
 
 
     public function store(Request $request){
         $this->validate($request, array(
             'name'=>'required',
-            'notice'=>'required'
+            'studentid'=>'required',
+            'email'=>'required',
+            'password' => 'required|min:6',
+            'academicssn'=>'required',
+
+            'department_id'=>'required'
 
 
 
         ));
 
-        $notice = new Notice();
-        $notice->tittle = $request->tittle;
-        $notice->notice = $request->notice;
+        $user = new User();
+        $user->name = $request->name;
+        $user->studentid = $request->studentid;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->academicssn = $request->academicssn;
+        $user->department_id = $request->department_id;
 
-        $notice->save();
+
+        $user->save();
         Session::flash('success','Notice published Succesfully');
-        return redirect()->route('admin.show',$notice->id);
+        return redirect()->route('users.create');
 
     }
 
