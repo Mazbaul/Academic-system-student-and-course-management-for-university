@@ -36,8 +36,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user=User::all();
-        return view('adminlte::user.index')->withUser($user);
+        $departments=Department::all();
+        return view('adminlte::user.index')->withDepartments($departments);
 
     }
 
