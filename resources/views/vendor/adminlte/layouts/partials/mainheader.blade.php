@@ -154,7 +154,7 @@
                                         {{ trans('adminlte_lang::message.signout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ 'App\Admin' == Auth::getProvider()->getModel() ? route('admin.logout') : route('logout') }} " method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                         <input type="submit" value="logout" style="display: none;">
                                     </form>

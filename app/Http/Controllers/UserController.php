@@ -71,7 +71,7 @@ class UserController extends Controller
 
 
         $user->save();
-        Session::flash('success','Notice published Succesfully');
+        Session::flash('success','New Student Added Succesfully');
         return redirect()->route('users.create');
 
     }
