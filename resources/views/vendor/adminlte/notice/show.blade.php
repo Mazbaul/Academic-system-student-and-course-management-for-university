@@ -24,7 +24,7 @@
                            <tr>
 
 
-                               <pre>{{$notice->notice}}</pre>
+                               {!!$notice->notice!!}
 
 
                            </tr>

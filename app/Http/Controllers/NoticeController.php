@@ -49,7 +49,7 @@ class NoticeController extends Controller
 
         $notice->save();
         Session::flash('success','Notice published Succesfully');
-        return redirect()->route('admin.show',$notice->id);
+        return redirect()->route('notice.show',$notice->id);
 
     }
 

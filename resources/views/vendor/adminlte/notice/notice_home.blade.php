@@ -1,20 +1,18 @@
 @extends('adminlte::layouts.app')
-
-
 @section('main-content')
 
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Create New Post</h1>
+            <h1>Create New Notice</h1>
             <hr>
-    <form action="{{ route('admin.notice.create') }}" method="post">
+    <form action="{{ route('notice.store') }}" method="post">
         <div class="form-group has-feedback">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div>
-                <label for="name" class="control-label">Tittle Of Notice :</label>
-                <input type="text" class="form-control" placeholder="Name of the Student" name="name"/>
+                <label for="tittle" class="control-label">Tittle Of Notice :</label>
+                <input type="text" class="form-control" placeholder="tittle of notice" name="tittle"/>
             </div>
             <div>
                 <label for="notice" class="control-label">Notice :</label>
@@ -23,7 +21,7 @@
 
         </div>
         <div>
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Create new</button>
+            <button type="submit" class="btn btn-success btn-block btn-flat">Create new</button>
         </div>
     </form>
 
