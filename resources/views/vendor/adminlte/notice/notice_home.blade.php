@@ -8,7 +8,7 @@
         <div class="col-md-8 col-md-offset-2">
             <h1>Create New Post</h1>
             <hr>
-    <form action="{{ route('user.create') }}" method="post">
+    <form action="{{ route('admin.notice.create') }}" method="post">
         <div class="form-group has-feedback">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

@@ -8,7 +8,7 @@
           <h1>ALL NOTICES</h1>
       </div>
       <div class="col-md-2">
-          <a href="{{route('admin.notice.create')}}" class="btn btn-primary btn-lg">Create new</a>
+          <a href="{{route('notice.create')}}" class="btn btn-primary btn-lg">Create new</a>
       </div>
         <div class="col-md-12">
             <hr>
@@ -31,7 +31,7 @@
                            <td><pre>{{$notice->tittle}}</pre></td>
                            <td><pre>{{substr($notice->notice,0,50)}}{{strlen($notice->notice)>50 ?"..........." :""}}</pre></td>
                            <td>{{date('M j, Y',strtotime($notice->created_at))}}</td>
-                           <td><a href="{{route('admin.show',$notice->id)}}" class="btn btn-sm btn-default">VIEW</a> </td>
+                           <td><a href="{{route('notice.show',$notice->id)}}" class="btn btn-sm btn-default">VIEW</a> </td>
                        </tr>
                    @endforeach
 

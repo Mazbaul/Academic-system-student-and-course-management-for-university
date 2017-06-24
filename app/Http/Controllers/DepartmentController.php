@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -30,7 +31,8 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        $departments=Department::all();
+        return view('adminlte::department.create')->withDepartments($departments);
     }
 
     /**
@@ -41,7 +43,23 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'name'=>'required|unique:departments',
+
+            'email'=>'required',
+
+        ));
+
+        $department = new Department();
+        $department->name = $request->name;
+        $department->email = $request->email;
+
+
+
+        $department->save();
+        Session::flash('success','New Department Added Succesfully');
+        return redirect()->route('departments.create');
+
     }
 
     /**

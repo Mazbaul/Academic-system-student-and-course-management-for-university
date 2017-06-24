@@ -6,11 +6,14 @@
 
 @section('main-content')
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-4">
             <h1>ALL STUDENTS</h1>
         </div>
+        <div class="col-md-4">
+            <a href="{{route('departments.create')}}" class="btn btn-success btn-lg">Add New Department</a>
+        </div>
         <div class="col-md-2">
-            <a href="{{route('users.create')}}" class="btn btn-primary btn-lg">Create new</a>
+            <a href="{{route('users.create')}}" class="btn btn-success btn-lg">Add New Student</a>
         </div>
         <div class="col-md-12">
             <hr>

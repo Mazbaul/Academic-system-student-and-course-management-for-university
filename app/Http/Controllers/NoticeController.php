@@ -1,27 +1,16 @@
 <?php
 
-/*
- * Taken from
- * https://github.com/laravel/framework/blob/5.3/src/Illuminate/Auth/Console/stubs/make/controllers/HomeController.stub
- */
-
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Notice;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use App\Notice;
 
-/**
- * Class HomeController
- * @package App\Http\Controllers
- */
 class NoticeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Display a listing of the resource.
      *
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function __construct()
     {
@@ -40,34 +29,60 @@ class NoticeController extends Controller
 
     }
 
-public function create(){
-    return view('adminlte::notice.notice_home');
-}
+    public function create(){
+        return view('adminlte::notice.notice_home');
+    }
 
 
-public function store(Request $request){
-  $this->validate($request, array(
+    public function store(Request $request){
+        $this->validate($request, array(
             'tittle'=>'required',
             'notice'=>'required'
 
 
 
-  ));
+        ));
 
-    $notice = new Notice();
-    $notice->tittle = $request->tittle;
-    $notice->notice = $request->notice;
+        $notice = new Notice();
+        $notice->tittle = $request->tittle;
+        $notice->notice = $request->notice;
 
-    $notice->save();
-    Session::flash('success','Notice published Succesfully');
-    return redirect()->route('admin.show',$notice->id);
+        $notice->save();
+        Session::flash('success','Notice published Succesfully');
+        return redirect()->route('admin.show',$notice->id);
 
-}
+    }
 
-public function show($id){
-  $notice=Notice::find($id);
-    return view('adminlte::notice.show')->withNotice($notice);
+    public function show($id){
+        $notice=Notice::find($id);
+        return view('adminlte::notice.show')->withNotice($notice);
 
-}
+    }
+    public function edit($id)
+    {
+        //
+    }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }
