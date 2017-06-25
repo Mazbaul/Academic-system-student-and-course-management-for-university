@@ -17,7 +17,10 @@ class Department extends Model
         return $this->hasMany('App\Subject');
     }
 
-
+    public function teachers()
+    {
+        return $this->hasMany('App\Teacher');
+    }
 
 }
 
