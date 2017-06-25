@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Notice;
-
+use Illuminate\Support\Facades\Session;
 class NoticeController extends Controller
 {
     /**
