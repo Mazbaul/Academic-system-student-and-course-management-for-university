@@ -15,6 +15,7 @@ class AddDepartmentIdInUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('department_id')->after('academicssn')->unsigned();
+            $table->foreign('department_id')->reference('id')->on('departments');
         });
     }
 

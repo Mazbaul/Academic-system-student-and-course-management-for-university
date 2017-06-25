@@ -12,4 +12,12 @@ class Department extends Model
     {
         return $this->hasMany('App\User');
     }
+    public function subjects()
+    {
+        return $this->hasMany('App\Subject');
+    }
+
+
+
 }
+

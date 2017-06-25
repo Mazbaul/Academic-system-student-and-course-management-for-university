@@ -6,7 +6,8 @@
     <div class="row">
         <div class="col-md-10">
 
-            <h1>ALL STUDENTS OF "$titleTag" DEPARTMENT</h1>
+            <h1>ALL STUDENTS OF  DEPARTMENT</h1>
+
         </div>
         <div class="col-md-2">
 
