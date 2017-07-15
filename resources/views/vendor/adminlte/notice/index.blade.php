@@ -32,6 +32,7 @@
                            <td>{!!substr($notice->notice,0,50)!!}{!!strlen($notice->notice)>50 ?"..........." :""!!}</td>
                            <td>{{date('M j, Y',strtotime($notice->created_at))}}</td>
                            <td><a href="{{route('notice.show',$notice->id)}}" class="btn btn-sm btn-default">VIEW</a> </td>
+                           <td><a href="{{route('sendemail',$notice->id)}}" class="btn btn-sm btn-default">SEND TO DEPARTMENT</a> </td>
                        </tr>
                    @endforeach
 

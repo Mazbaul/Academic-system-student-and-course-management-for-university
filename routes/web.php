@@ -26,6 +26,7 @@ Route::prefix('admin')->group(function() {
     Route::resource('/notice', 'NoticeController');
     Route::resource('/users', 'UserController');
     Route::resource('/departments', 'DepartmentController');
+    Route::get('/email/{id}','AdminController@email')->name('sendemail');
 
 });
 

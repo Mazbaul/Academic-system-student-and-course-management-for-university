@@ -8,7 +8,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Mail\NewNoticePublish;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Department;
+use App\Notice;
 
 /**
  * Class HomeController
@@ -34,5 +38,22 @@ class AdminController extends Controller
     public function index()
     {
         return view('adminlte::home');
+
     }
+
+    public function email($id)
+    {
+        $notice=Notice::find($id);
+        $department=Department::all();
+
+        foreach( $department as $department ) :
+
+
+        Mail::to($department->email)->send(new NewNoticePublish($notice));
+        endforeach;
+
+        return redirect('admin/notice');
+
+    }
+
 }
