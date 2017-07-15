@@ -20,7 +20,20 @@ class Department extends Model
     public function teachers()
     {
         return $this->hasMany('App\Teacher');
+
     }
+    public function courses()
+    {
+        return $this->hasMany('App\Course');
+
+    }
+
+    public function registereds()
+    {
+        return $this->hasMany('App\Registered');
+
+    }
+
 
 }
 

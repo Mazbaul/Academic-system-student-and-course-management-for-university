@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Department;
 use App\Notice;
+use Illuminate\Support\Facades\Session;
 
 /**
  * Class HomeController
@@ -51,7 +52,7 @@ class AdminController extends Controller
 
         Mail::to($department->email)->send(new NewNoticePublish($notice));
         endforeach;
-
+        Session::flash('success','Notice published Succesfully');
         return redirect('admin/notice');
 
     }

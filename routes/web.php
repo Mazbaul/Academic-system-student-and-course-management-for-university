@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('user.dashboard');
 
+Route::get('/home', 'HomeController@index')->name('user.dashboard');
+route::resource('/courses','CourseController');
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
