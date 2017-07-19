@@ -7,7 +7,7 @@
 
 @section('main-content')
   <div class="well col-md-4 ">
-      <a href="{{route('courses.index')}}" class="btn btn-success btn-lg">Course Registration</a>
+      <a href="{{route('course.registration')}}" class="btn btn-success btn-lg">Course Registration</a>
 
   </div>
 @endsection

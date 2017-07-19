@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Department;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -18,9 +19,9 @@ class CourseController extends Controller
     }
 
     public function index()
-    {
+    {   $department=Department::all();
         $course=Course::all();
-        return view('adminlte::user.course_registration')->withCourse($course);
+        return view('adminlte::user.course_registration')->withCourse($course)->withDepartment($department);
     }
 
     /**
