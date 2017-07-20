@@ -66,7 +66,12 @@
 
             </table>
         </div>
-        <div class="col-md-3 col-md-offset-8">
+        <div class="col-md-3 col-md-offset-9">
+
+            <h5><strong>Total Credit hour :  {{$course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')}}</strong> </h5>
+        </div>
+
+        <div class="col-md-3 col-md-offset-9">
             {{ Form::submit('register', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
         </div>
         {!! Form::close() !!}

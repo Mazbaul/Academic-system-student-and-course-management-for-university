@@ -19,9 +19,7 @@ class CourseController extends Controller
     }
 
     public function index()
-    {   $department=Department::all();
-        $course=Course::all();
-        return view('adminlte::user.course_registration')->withCourse($course)->withDepartment($department);
+    {
     }
 
     /**

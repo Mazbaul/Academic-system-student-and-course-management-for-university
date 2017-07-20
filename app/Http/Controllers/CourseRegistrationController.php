@@ -25,6 +25,7 @@ class CourseRegistrationController extends Controller
         $term=$request->term;
         $did=$request->department_id;
         $course=Course::Where([['department_id','=',$did],['year','=',$year],['term','=',$term]])->get();
+
         return view('adminlte::user.show_courses')->withCourse($course)->withDepartment($department);
     }
 
