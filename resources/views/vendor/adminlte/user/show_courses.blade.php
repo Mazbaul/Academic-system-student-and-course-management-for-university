@@ -36,7 +36,10 @@
     </div>
     <br><br>
     <div class="row">
-        {!! Form::open(['route' => 'course.show']) !!}
+        <div class="col-md-8">
+
+        </div>
+
         <div class="col-md-12">
             <table class="table">
                 <thead>
@@ -66,14 +69,20 @@
 
             </table>
         </div>
+        <div class="col-md-6">
+            <h5>Courses Of <strong>{{$course->department->name}}</strong> Department For <strong>Year-{{$course->year}},Term-{{$course->term}}</strong>  </h5>
+
+        </div>
         <div class="col-md-3 col-md-offset-9">
 
             <h5><strong>Total Credit hour :  {{$course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')}}</strong> </h5>
         </div>
 
         <div class="col-md-3 col-md-offset-9">
+            {!! Form::open(['route' => 'course.show']) !!}
             {{ Form::submit('register', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
+            {!! Form::close() !!}
         </div>
-        {!! Form::close() !!}
+
     </div>
 @endsection
