@@ -27,6 +27,7 @@ class CreateRegisteredsTable extends Migration
 
         Schema::table('registereds', function ($table){
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
