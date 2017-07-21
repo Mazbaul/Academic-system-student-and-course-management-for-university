@@ -79,7 +79,13 @@
         </div>
 
         <div class="col-md-3 col-md-offset-9">
-            {!! Form::open(['route' => 'course.show']) !!}
+            {!! Form::open(['route' => 'course.register']) !!}
+
+            <input type="hidden" name="department_id" value="{{ $course->department_id }}">
+            <input type="hidden" name="year" value="{{ $course->year }}">
+            <input type="hidden" name="term" value="{{ $course->term }}">
+
+
             {{ Form::submit('register', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
             {!! Form::close() !!}
         </div>

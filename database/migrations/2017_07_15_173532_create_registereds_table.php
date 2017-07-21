@@ -15,7 +15,7 @@ class CreateRegisteredsTable extends Migration
     {
         Schema::create('registereds', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id');
+            $table->string('student_id');
             $table->integer('department_id');
             $table->integer('year');
             $table->integer('term');
