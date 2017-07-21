@@ -34,7 +34,7 @@ class CourseRegistrationController extends Controller
     public function courseregister(Request $request)
     {
         $register=Registered::Where([['student_id','=',Auth::user()->id ],['year','=',$request->year],['term','=',$request->term]])->get();
-        If ( $request->department_id = Auth::user()->department_id && $register->isempty())
+        If ( $request->department_id == Auth::user()->department_id && $register->isempty())
             {
 
             $reg = new Registered();
