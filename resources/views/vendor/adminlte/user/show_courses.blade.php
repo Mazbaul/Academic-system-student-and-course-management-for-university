@@ -77,7 +77,88 @@
 
             <h5><strong>Total Credit hour :  {{$course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')}}</strong> </h5>
         </div>
+    </div>
 
+     <div class="row">
+
+         <div class="col-md-12">
+             @if((($course->term)%2) > 0)
+             <table class="table">
+                 <thead>
+
+                 <th>Admission Fee</th>
+                 <th>Credit hour fee</th>
+                 <th>Total Credit Hour Fee</th>
+                 <th>Student Trust Fund</th>
+                 <th>Central Library Fee</th>
+                 <th>Seminar Library Fee</th>
+                 <th>Transport Fee</th>
+                 </thead>
+                 <tbody>
+
+                 @foreach($payment as $payment)
+                     <tr>
+                         <td>{{$payment->admission_fee}}</td>
+                         <td>{{$payment->credithour_fee}}</td>
+                         <td> {{ $payment->sum('credithour_fee')* $course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')  }} </td>
+                         <td>{{$payment->student_trustfund}}</td>
+                         <td>{{$payment->central_libraryfee}}</td>
+                         <td>{{$payment->seminar_libraryfee}}</td>
+                         <td>{{$payment->transport_fee}}</td>
+
+
+                     </tr>
+                 @endforeach
+                 @else
+                     <table class="table">
+                         <thead>
+
+                         <th>Credit hour fee</th>
+                         <th>Total Credit Hour Fee</th>
+                         <th>Student Trust Fund</th>
+                         <th>Central Library Fee</th>
+                         <th>Seminar Library Fee</th>
+                         <th>Transport Fee</th>
+                         </thead>
+                         <tbody>
+                     @foreach($payment as $payment)
+                         <tr>
+
+                             <td>{{$payment->credithour_fee}}</td>
+                             <td> {{ $payment->sum('credithour_fee')* $course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')  }} </td>
+                             <td>{{$payment->student_trustfund}}</td>
+                             <td>{{$payment->central_libraryfee}}</td>
+                             <td>{{$payment->seminar_libraryfee}}</td>
+                             <td>{{$payment->transport_fee}}</td>
+
+
+                         </tr>
+                     @endforeach
+                 @endif
+                 </tbody>
+
+             </table>
+         </div>
+
+         <div class="col-md-3 col-md-offset-9">
+
+             <h5><strong>Total payment :
+                     @if((($course->term)%2) > 0)
+                     {!! $payment->sum('admission_fee')+$payment->sum('seminar_libraryfee')+$payment->sum('transport_fee') + $payment->sum('student_trustfund') + $payment->sum('credithour_fee')* $course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour') + $payment->sum('central_libraryfee') !!}
+
+
+             @else
+
+             {!!$payment->sum('seminar_libraryfee')+$payment->sum('transport_fee') + $payment->sum('student_trustfund') + $payment->sum('credithour_fee')* $course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour') + $payment->sum('central_libraryfee') !!}
+
+           @endif
+                 </strong> </h5>
+         </div>
+
+     </div>
+
+
+        <div class="row">
         <div class="col-md-3 col-md-offset-9">
             {!! Form::open(['route' => 'course.register']) !!}
 

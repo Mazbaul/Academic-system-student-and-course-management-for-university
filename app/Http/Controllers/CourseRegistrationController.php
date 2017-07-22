@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Department;
 
+use App\Payment;
 use App\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Session;
 
 class CourseRegistrationController extends Controller
 {
+
+
     public function __construct()
     {
         $this->middleware('auth:web');
@@ -22,15 +25,26 @@ class CourseRegistrationController extends Controller
 
         return view('adminlte::user.course_registration')->withDepartment($department);
     }
+
+
     public function showcourse(Request $request)
-    {   $department=Department::all();
-        $year=$request->year;
+    {    $year=$request->year;
         $term=$request->term;
         $did=$request->department_id;
+
+
+        $department=Department::all();
+        $payments=Payment::all();
+
+
+
         $course=Course::Where([['department_id','=',$did],['year','=',$year],['term','=',$term]])->get();
 
-        return view('adminlte::user.show_courses')->withCourse($course)->withDepartment($department);
+        return view('adminlte::user.show_courses')->withCourse($course)->withDepartment($department)->withPayment($payments);
     }
+
+
+
     public function courseregister(Request $request)
     {
         $register=Registered::Where([['student_id','=',Auth::user()->id ],['year','=',$request->year],['term','=',$request->term]])->get();
