@@ -58,12 +58,38 @@ class CourseRegistrationController extends Controller
             $reg->term = $request->term;
 
             $reg->save();
-            Session::flash('success','Notice Created Succesfully');
-                return view('adminlte::user.after_register');
+            Session::flash('success','registered Succesfully');
+                $year=$request->year;
+                $term=$request->term;
+                $did=$request->department_id;
+
+
+                $department=Department::all();
+                $payments=Payment::all();
+
+
+
+                $course=Course::Where([['department_id','=',$did],['year','=',$year],['term','=',$term]])->get();
+                Session::flash('error','You Need to be a student of same department And You can register once for a semister ');
+                return view('adminlte::user.show_courses')->withCourse($course)->withDepartment($department)->withPayment($payments);
 
         }
         else{
-            return view('adminlte::user.after_register');
+            $year=$request->year;
+            $term=$request->term;
+            $did=$request->department_id;
+
+
+            $department=Department::all();
+            $payments=Payment::all();
+
+
+
+            $course=Course::Where([['department_id','=',$did],['year','=',$year],['term','=',$term]])->get();
+            Session::flash('error','You Need to be a student of same department And You can register once for a semister ');
+            return view('adminlte::user.show_courses')->withCourse($course)->withDepartment($department)->withPayment($payments);
+
+
         }
 
 
