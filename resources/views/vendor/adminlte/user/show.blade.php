@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('adminlte::layouts.app_user')
 
 
 @section('main-content')

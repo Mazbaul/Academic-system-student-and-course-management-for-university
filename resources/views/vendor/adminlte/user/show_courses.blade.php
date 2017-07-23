@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('adminlte::layouts.app_user')
 
 @section('htmlheader_title')
     {{ trans('adminlte_lang::message.home') }}
@@ -14,31 +14,31 @@
                     {{Session::get('success')}}
                 </div>
                 <div class="row" >
-    <div class="col-md-6">
-        {!! Form::open(['route' => 'course.show']) !!}
-        {{ Form::submit('Download Course form', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
-        {!! Form::close() !!}
-    </div>
-    <div class="col-md-6">
-        {!! Form::open(['route' => 'course.show']) !!}
-        {{ Form::submit('Download Bank Pay Slip', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
-        {!! Form::close() !!}
-    </div>
-    </div>
+                    <div class="col-md-6">
+                       {!! Form::open(['route' => 'course.show']) !!}
+                       {{ Form::submit('Download Course form', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
+                       {!! Form::close() !!}
+                    </div>
+                    <div class="col-md-6">
+                       {!! Form::open(['route' => 'course.show']) !!}
+                       {{ Form::submit('Download Bank Pay Slip', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
+                       {!! Form::close() !!}
+                    </div>
+                </div>
              @elseif(Session::has('error'))
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger " role="alert">
 
                     {{Session::get('error')}}
                 </div>
 
         </div>
-        @endif
+             @endif
 
     </div>
     <div class="row">
-    <div class="col-md-8">
-        <h3>Find Your Course for desired semister</h3>
-    </div>
+        <div class="col-md-8">
+           <h3>Find Your Course for desired semister</h3>
+        </div>
     <div class="col-md-12">
         {!! Form::open(['route' => 'course.show']) !!}
         <div class="col-md-3">
