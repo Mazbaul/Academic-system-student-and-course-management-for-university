@@ -31,13 +31,13 @@
                 <tbody>
                 @foreach($registered as $registered)
                     <tr>
-                        <th>{{$registered->user->name}}</th>
-                        <th>{{$registered->user->studentid}}</th>
-                        <th>{{$registered->user->email}}</th>
-                        <th>{{$registered->user->academicssn}}</th>
-                        <th>{{$registered->department->name}}</th>
-                        <th>{{$registered->year}}</th>
-                        <th>{{$registered->term}}</th>
+                        <td>{{$registered->user->name}}</td>
+                        <td>{{$registered->user->studentid}}</td>
+                        <td>{{$registered->user->email}}</td>
+                        <td>{{$registered->user->academicssn}}</td>
+                        <td>{{$registered->department->name}}</td>
+                        <td>{{$registered->year}}</td>
+                        <td>{{$registered->term}}</td>
 
                     </tr>
                 @endforeach

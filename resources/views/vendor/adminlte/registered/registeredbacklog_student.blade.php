@@ -30,12 +30,12 @@
                 <tbody>
                 @foreach($backlog as $backlog)
                     <tr>
-                        <th>{{$backlog->course_code}}</th>
-                        <th>{{$backlog->course_name}}</th>
-                        <th>{{$backlog->student_id}}</th>
-                        <th>{{$backlog->department->name}}</th>
-                        <th>{{$backlog->course_year}}</th>
-                        <th>{{$backlog->course_term}}</th>
+                        <td>{{$backlog->course_code}}</td>
+                        <td>{{$backlog->course_name}}</td>
+                        <td>{{$backlog->student_id}}</td>
+                        <td>{{$backlog->department->name}}</td>
+                        <td>{{$backlog->course_year}}</td>
+                        <td>{{$backlog->course_term}}</td>
 
                     </tr>
                 @endforeach
