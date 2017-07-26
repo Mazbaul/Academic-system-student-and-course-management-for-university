@@ -10,5 +10,8 @@ class Registered extends Model
     {
         return $this->belongsTo('App\Department');
     }
-
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

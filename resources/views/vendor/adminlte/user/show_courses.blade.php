@@ -15,12 +15,12 @@
                 </div>
                 <div class="row" >
                     <div class="col-md-6">
-                       {!! Form::open(['route' => 'course.show']) !!}
+                       {!! Form::open(['route' => 'course.formdownload']) !!}
                        {{ Form::submit('Download Course form', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
                        {!! Form::close() !!}
                     </div>
                     <div class="col-md-6">
-                       {!! Form::open(['route' => 'course.show']) !!}
+                       {!! Form::open(['route' => 'course.bformdownload']) !!}
                        {{ Form::submit('Download Bank Pay Slip', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
                        {!! Form::close() !!}
                     </div>

@@ -33,7 +33,10 @@ class Department extends Model
         return $this->hasMany('App\Registered');
 
     }
+    public function Backlog()
+    {
+        return $this->hasMany('App\Backlog');
 
+    }
 
 }
-

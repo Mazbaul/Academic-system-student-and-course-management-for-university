@@ -21,6 +21,10 @@ class User extends  Authenticatable
     {
         return $this->belongsTo('App\Department');
     }
+    public function registered()
+    {
+        return $this->belongsTo('App\Registered');
+    }
 
     protected $fillable = [
         'name', 'email','studentid', 'password','academicssn',

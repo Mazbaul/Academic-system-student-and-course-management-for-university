@@ -10,4 +10,8 @@
       <a href="{{route('course.registration')}}" class="btn btn-success btn-lg">Course Registration</a>
 
   </div>
+  <div class="well col-md-4 ">
+      <a href="{{route('backlog.registration')}}" class="btn btn-success btn-lg">Backlog Registration</a>
+
+  </div>
 @endsection

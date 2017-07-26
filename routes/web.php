@@ -17,10 +17,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('user.dashboard');
-route::get('/course','CourseRegistrationController@index')->name('course.registration');
-route::post('/course/show','CourseRegistrationController@showcourse')->name('course.show');
-route::post('/course/register','CourseRegistrationController@courseregister')->name('course.register');
-
+Route::get('/course','CourseRegistrationController@index')->name('course.registration');
+Route::post('/course/show','CourseRegistrationController@showcourse')->name('course.show');
+Route::post('/course/register','CourseRegistrationController@courseregister')->name('course.register');
+Route::get('/course/register/pdf','PDFController@courseform')->name('course.formdownload');
+Route::get('/course/register/pdf/bform','PDFController@bankform')->name('course.bformdownload');
+Route::get('/backlog','BacklogRegistrationController@index')->name('backlog.registration');
+Route::post('/backlog/register','BacklogRegistrationController@add')->name('backlog.add');
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
@@ -31,6 +34,9 @@ Route::prefix('admin')->group(function() {
     Route::resource('/users', 'UserController');
     Route::resource('/departments', 'DepartmentController');
     Route::get('/email/{id}','AdminController@email')->name('sendemail');
+    Route::get('/registered','RegisteredUserController@index')->name('registered.student');
+    Route::get('/registered/backlog','RegisteredbacklogUserController@index')->name('registered.studentbacklog');
+
 
 });
 
