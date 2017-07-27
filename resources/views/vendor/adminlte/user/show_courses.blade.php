@@ -15,14 +15,12 @@
                 </div>
                 <div class="row" >
                     <div class="col-md-6">
-                       {!! Form::open(['route' => 'course.formdownload']) !!}
-                       {{ Form::submit('Download Course form', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
-                       {!! Form::close() !!}
+                      <a href="{{route('course.formdownload')}}" class="btn btn-success" ><strong>download course form</strong></a>
+
                     </div>
                     <div class="col-md-6">
-                       {!! Form::open(['route' => 'course.bformdownload']) !!}
-                       {{ Form::submit('Download Bank Pay Slip', array('class' => 'btn btn-success btn-sm btn-block ', 'style' => 'margin-top: 30px;')) }}
-                       {!! Form::close() !!}
+                      <a href="{{route('course.formdownload')}}" class="btn btn-success" ><strong>download course form</strong></a>
+
                     </div>
                 </div>
              @elseif(Session::has('error'))

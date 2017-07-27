@@ -17,16 +17,14 @@ class PDFController extends Controller
       $this->middleware('auth:web');
   }
 
-      public function courseform()
+      public function courseform(Request $request)
       {
-          $studentid=Auth::User()->id;
-          $studentdid=Auth::User()->department_id;
-          $userinfo=User::find($studentid);
-          $registeredyr=Registered::Where([['student_id','=',$studentid],['department_id','=',$studentdid]])->get('year')->last();
-          $registeredtrm=Registered::Where([['student_id','=',$studentid],['department_id','=',$studentdid]])->get('term')->last();
-          $course=Course::Where([['department_id','=',$studentdid],['year','=',$registeredyr],['term','=',$registeredtrm]])->get();
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->id;
+          $registered=Registered::Where([['department_id','=',$did],['user_id','=',$userid]])->first();
+          $course=Course::all();
 
-          $pdf=PDF::loadView('adminlte::pdf.Courseregform', compact('userinfo'));
+          $pdf=\PDF::loadView('adminlte::pdf.Courseregform',compact('course','registered'));
           return $pdf->download('courseregform.pdf');
 
 
