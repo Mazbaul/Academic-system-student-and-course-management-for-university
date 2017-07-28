@@ -15,11 +15,11 @@
                 </div>
                 <div class="row" >
                     <div class="col-md-6">
-                      <a href="{{route('course.formdownload')}}" class="btn btn-success" ><strong>download course form</strong></a>
+                      <a href="{{route('course.formdownload')}}" class="btn btn-success" ><strong>Download Course Form</strong></a>
 
                     </div>
                     <div class="col-md-6">
-                      <a href="{{route('course.formdownload')}}" class="btn btn-success" ><strong>download course form</strong></a>
+                      <a href="{{route('course.bformdownload')}}" class="btn btn-success" ><strong>Download Bank Form</strong></a>
 
                     </div>
                 </div>

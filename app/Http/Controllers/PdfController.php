@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 Use App\User;
 Use App\Registered;
 Use App\Course;
+Use App\Payment;
 Use PDF;
 class PDFController extends Controller
 {
@@ -26,6 +27,20 @@ class PDFController extends Controller
 
           $pdf=\PDF::loadView('adminlte::pdf.Courseregform',compact('course','registered'));
           return $pdf->download('courseregform.pdf');
+
+
+      }
+
+      public function bankform(Request $request)
+      {
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->id;
+          $registered=Registered::Where([['department_id','=',$did],['user_id','=',$userid]])->first();
+          $course=Course::all();
+          $payment=Payment::all();
+
+          $pdf=\PDF::loadView('adminlte::pdf.bankform',compact('course','registered','payment'));
+          return $pdf->download('bankform.pdf');
 
 
       }
