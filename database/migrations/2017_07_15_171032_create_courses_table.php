@@ -21,7 +21,7 @@ class CreateCoursesTable extends Migration
             $table->integer('year');
             $table->integer('term');
             $table->integer('credit_hour');
-
+            $table->timestamps();
 
 
         });

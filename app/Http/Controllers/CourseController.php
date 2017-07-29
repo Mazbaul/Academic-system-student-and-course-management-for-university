@@ -42,16 +42,16 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-      $course=Course::Where([['course_code','=',$request->course_code ],['course_title','=',$request->course_name ],['year','=',$request->year],['term','=',$request->term]])->get();
-      If ($course->isempty())
+      $course=Course::Where([['course_code','=',$request->course_code ],['course_title','=',$request->course_name ],['year','=',$request->year],['term','=',$request->term]])->first();
+      If ($course == null)
           {
 
       $course = new Course();
       $course->course_code = $request->course_code;
       $course->course_title = $request->course_name;
       $course->department_id = $request->department_id;
-      $course->course_year =$request->year;
-      $course->course_term = $request->term;
+      $course->year =$request->year;
+      $course->term = $request->term;
       $course->credit_hour = $request->credit_hour;
 
 
