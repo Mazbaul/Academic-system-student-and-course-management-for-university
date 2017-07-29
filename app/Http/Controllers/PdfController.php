@@ -46,15 +46,15 @@ class PDFController extends Controller
         //bank form
       public function bankform(Request $request)
       {
-        $course=Course::all();
-        $payment=Payment::all();
+
           $did=Auth::User()->department_id;
           $userid=Auth::User()->id;
 
 
          $registered=Registered::Where([['department_id','=',$did],['user_id','=',$userid]])->latest()->first();
 
-
+         $course=Course::all();
+         $payment=Payment::all();
 
 
           $pdf=\PDF::loadView('adminlte::pdf.bankform',compact('course','registered','payment'));
