@@ -56,7 +56,7 @@ class CourseController extends Controller
 
 
 
-      $backlog->save();
+      $course->save();
       Session::flash('success','New course Added Succesfully');
       $department=Department::all();
       return view('adminlte::course.courseentry')->withDepartment($department);
