@@ -20,6 +20,8 @@ class CourseController extends Controller
 
     public function index()
     {
+      $department=Department::all();
+      return view('adminlte::course.courseentry')->withDepartment($department);
     }
 
     /**
@@ -40,7 +42,25 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $course=Course::Where([['course_code','=',$request->course_code ],['course_name','=',$request->course_name ],['year','=',$request->year],['term','=',$request->term]])->get();
+      If ($course->isempty())
+          {
+
+      $course = new Course();
+      $course->course_code = $request->course_code;
+      $course->course_name = $request->course_name;
+      $course->department_id = $request->department_id;
+      $course->course_year =$request->year;
+      $course->course_term = $request->term;
+      $course->credit_hour = $request->credit_hour;
+
+
+
+      $backlog->save();
+      Session::flash('success','New course Added Succesfully');
+      $department=Department::all();
+      return view('adminlte::course.courseentry')->withDepartment($department);
+    }
     }
 
     /**

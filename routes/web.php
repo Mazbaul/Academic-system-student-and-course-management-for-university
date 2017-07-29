@@ -34,6 +34,7 @@ Route::prefix('admin')->group(function() {
     Route::resource('/notice', 'NoticeController');
     Route::resource('/users', 'UserController');
     Route::resource('/departments', 'DepartmentController');
+    Route::resource('/courses', 'CourseController');
     Route::get('/email/{id}','AdminController@email')->name('sendemail');
     Route::get('/registered','RegisteredUserController@index')->name('registered.student');
     Route::get('/registered/backlog','RegisteredbacklogUserController@index')->name('registered.studentbacklog');

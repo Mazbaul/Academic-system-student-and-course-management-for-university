@@ -17,7 +17,7 @@ class PDFController extends Controller
   {
       $this->middleware('auth:web');
   }
-//courseform and admit card
+     //courseform and admit card
       public function courseform(Request $request)
       {
           $did=Auth::User()->department_id;
@@ -43,7 +43,7 @@ class PDFController extends Controller
 
 
       }
-//bank form
+        //bank form
       public function bankform(Request $request)
       {
           $did=Auth::User()->department_id;
