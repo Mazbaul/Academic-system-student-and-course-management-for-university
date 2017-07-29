@@ -61,6 +61,8 @@ class CourseController extends Controller
       $department=Department::all();
       return view('adminlte::course.courseentry')->withDepartment($department);
     }
+
+
     else{
 
       Session::flash('error','course Already Added');
