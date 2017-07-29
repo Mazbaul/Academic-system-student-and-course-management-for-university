@@ -35,7 +35,9 @@ class BacklogRegistrationController extends Controller
 
 
       //));
-
+      $backlog=Backlog::Where([['course_code','=',$request->course_code ],['student_id','=',$request->studentid ],['course_name','=',$request->course_name ],['course_year','=',$request->year],['course_term','=',$request->term]])->get();
+      If ($backlog->isempty())
+          {
       $backlog = new Backlog();
       $backlog->course_code = $request->course_code;
       $backlog->course_name = $request->course_name;
@@ -52,6 +54,17 @@ class BacklogRegistrationController extends Controller
       return view('adminlte::user.backlog_registration')->withDepartment($department);
 
   }
+  else{
 
+
+    Session::flash('error','You Have Already registered  for This Course If you Want to Retake it Contact ADMIN ');
+
+
+    $department=Department::all();
+    return view('adminlte::user.backlog_registration')->withDepartment($department);
+
+
+  }
+}
 
 }
