@@ -5,18 +5,23 @@
 @endsection
 
 @section('main-content')
+<div >
     <div >
-        <div >
-            @if(Session::has('success'))
-                <div class="alert alert-success" role="alert">
+        @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
 
-                    {{Session::get('success')}}
-                </div>
+                {{Session::get('success')}}
+            </div>
+         @elseif(Session::has('error'))
+            <div class="alert alert-danger " role="alert">
 
-        </div>
-        @endif
+                {{Session::get('error')}}
+            </div>
 
     </div>
+         @endif
+
+</div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h1>Add Courses</h1>

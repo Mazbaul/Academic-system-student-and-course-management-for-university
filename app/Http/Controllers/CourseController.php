@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Department;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
 class CourseController extends Controller
 {
     /**
@@ -42,13 +42,13 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-      $course=Course::Where([['course_code','=',$request->course_code ],['course_name','=',$request->course_name ],['year','=',$request->year],['term','=',$request->term]])->get();
+      $course=Course::Where([['course_code','=',$request->course_code ],['course_title','=',$request->course_name ],['year','=',$request->year],['term','=',$request->term]])->get();
       If ($course->isempty())
           {
 
       $course = new Course();
       $course->course_code = $request->course_code;
-      $course->course_name = $request->course_name;
+      $course->course_title = $request->course_name;
       $course->department_id = $request->department_id;
       $course->course_year =$request->year;
       $course->course_term = $request->term;
@@ -60,6 +60,14 @@ class CourseController extends Controller
       Session::flash('success','New course Added Succesfully');
       $department=Department::all();
       return view('adminlte::course.courseentry')->withDepartment($department);
+    }
+    else{
+
+      Session::flash('error','course Already Added');
+      $department=Department::all();
+      return view('adminlte::course.courseentry')->withDepartment($department);
+
+
     }
     }
 
