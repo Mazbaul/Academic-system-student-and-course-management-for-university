@@ -36,7 +36,7 @@
             <li class="active"><a href="{{ url('/admin') }}"> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li><a href="{{ url('/admin/notice') }}"><span>Notices</span></a></li>
             <li><a href="{{ url('/admin/users') }}"><span>Students</span></a></li>
-            <li><a href="{{ url('/admin/registered') }}"><span>Registered Students</span></a></li>
+            <li><a href="{{ url('/admin/registered') }}"><span>Registered Students Regular</span></a></li>
             <li><a href="{{ url('/admin/registered/backlog') }}"><span>Registered Students Backlog</span></a></li>
 
         <!-- <li class="treeview">

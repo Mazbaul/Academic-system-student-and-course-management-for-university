@@ -22,6 +22,7 @@ Route::post('/course/show','CourseRegistrationController@showcourse')->name('cou
 Route::post('/course/register','CourseRegistrationController@courseregister')->name('course.register');
 Route::get('/course/register/pdf','PDFController@courseform')->name('course.formdownload');
 Route::get('/course/register/pdf/bform','PDFController@bankform')->name('course.bformdownload');
+Route::get('/course/register/pdf/entryform','PDFController@courseentryform')->name('course.courseentrydownload');
 Route::get('/backlog','BacklogRegistrationController@index')->name('backlog.registration');
 Route::post('/backlog/register','BacklogRegistrationController@add')->name('backlog.add');
 
