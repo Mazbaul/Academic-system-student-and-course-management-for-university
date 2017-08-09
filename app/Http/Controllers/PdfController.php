@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 Use App\User;
 Use App\Registered;
+Use App\Backlog;
 Use App\Course;
 Use App\Payment;
 Use PDF;
@@ -59,6 +60,20 @@ class PDFController extends Controller
 
           $pdf=\PDF::loadView('adminlte::pdf.bankform',compact('course','registered','payment'));
           return $pdf->download('bankform.pdf');
+
+
+      }
+       //backlog courseform and admit card
+      public function backlogcourseform(Request $request)
+      {
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->studentid;
+          $backloga=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+          $backlogb=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+
+
+          $pdf=\PDF::loadView('adminlte::pdf.BacklogCourseregform',compact('backloga','backlogb'));
+          return $pdf->download('backlogcourseregform.pdf');
 
 
       }
