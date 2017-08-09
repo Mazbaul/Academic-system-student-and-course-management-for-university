@@ -19,6 +19,15 @@
         page-break-after: always;
     }
   </style>
+<?php
+
+foreach($course as $course)
+
+
+
+
+
+?>
 </head>
 
 <body>
@@ -38,44 +47,6 @@
 
 </div>
 </div>
-<div style="padding-left:50px;">
-<div style="padding-left:90px;">
-  <table>
-      <tr>
-          <th>Sl No.</th>
-          <th>Course Code    </th>
-          <th>   Course Title</th>
-          <th>   Credit Hour</th>
-          <th>   Year</th>
-          <th>   term</th>
-      </tr>
-
-
-        @foreach($course as $course)
-
-        @if((Auth::User()->department_id)==($course->department_id)&& ($registered->year)==($course->year)&& ($registered->term)==($course->term))
-
-          <tr>
-              <td></td>
-              <td>{{$course->course_code}}</td>
-              <td>{{$course->course_title}}</td>
-              <td>{{$course->credit_hour}}</td>
-                <td>{{$course->year}}</td>
-                <td>{{$course->term}}</td>
-
-
-
-
-
-          </tr>
-
-          @endif
-      @endforeach
-
-
-</table>
-</div>
-</div>
     <div class="row">
       <div class="col-md-8 " style="padding-left:50px;">
 <div class="col-md-2"><strong>Student Name </strong>:{{Auth::User()->name}}</div><br>
@@ -87,9 +58,23 @@
 <div class="col-md-2"><strong>Hall :</strong>Abdus Salam Hall</div><br><br>
 
 </div>
-</div>
+</div><br><br>
 <div style="padding-left:50px;">
-<div style="padding-left:90px;">
+  <div class="col-md-2" style=" padding-left:500px;padding-bottom:-100px;">
+    <div style="padding-top:50px;">
+<p>---------------------</p>
+      <strong>Provost</strong>
+    </div>
+  </div>
+<div>
+<p>---------------------</p>
+<strong>Chairman</strong>
+</div>
+
+</div>
+<br><br>
+<div style="padding-left:50px;">
+<div style="padding-left:50px;">
 
   @if((($registered->term)%2) > 0)
   <table class="table">
@@ -167,27 +152,9 @@
   </table>
 </div>
 <br>
-<div>
-<strong>Percentage of Attendance:</strong>.....................................
-
-
-</div>
-<br><br><br><br>
 
  </div>
- <div style="padding-left:50px;">
-   <div class="col-md-2" style=" padding-left:500px;padding-bottom:-100px;">
-     <div style="padding-top:50px;">
-<p>---------------------</p>
-       <strong>Provost</strong>
-     </div>
-   </div>
-<div>
-<p>---------------------</p>
- <strong>Chairman</strong>
-</div>
 
- </div>
 
 </div>
 <br>

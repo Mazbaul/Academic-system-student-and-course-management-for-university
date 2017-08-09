@@ -37,6 +37,7 @@ Route::prefix('admin')->group(function() {
     Route::resource('/courses', 'CourseController');
     Route::get('/email/{id}','AdminController@email')->name('sendemail');
     Route::get('/registered','RegisteredUserController@index')->name('registered.student');
+    Route::post('/registered/show','RegisteredUserController@show')->name('registered.show');
     Route::get('/registered/backlog','RegisteredbacklogUserController@index')->name('registered.studentbacklog');
 
 

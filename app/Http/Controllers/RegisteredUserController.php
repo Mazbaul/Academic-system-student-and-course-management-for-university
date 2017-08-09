@@ -22,6 +22,15 @@ class RegisteredUserController extends Controller
 
      }
 
+     public function show(Request $request)
+     {
+            $student_id=$request->student_id;
+        $registered=Registered::find($student_id);
+        return view('adminlte::registered.registered_studentshow')->withRegistered($registered);
+
+
+     }
+
 
 
 
