@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use App\Registered;
+Use App\User;
 class RegisteredUserController extends Controller
 {
       public function __construct()
@@ -24,9 +25,10 @@ class RegisteredUserController extends Controller
 
      public function show(Request $request)
      {
-            $student_id=$request->student_id;
-        $registered=Registered::find($student_id);
-        return view('adminlte::registered.registered_studentshow')->withRegistered($registered);
+            $studentid=$request->student_id;
+        $user=User::find($studentid);
+
+        return view('adminlte::registered.registered_studentshow')->with($user);
 
 
      }

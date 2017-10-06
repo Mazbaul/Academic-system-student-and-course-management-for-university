@@ -15,6 +15,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('/css/all-landing.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet" type="text/css" />
 
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
@@ -25,6 +26,20 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
 
 <div id="app" v-cloak>
+  <div class="container">
+
+  <div class="row">
+
+ <div class="well">
+   <img src="{{ asset('img/21055156_1314746161980753_8532697384969707705_o.jpg') }}" class="img-responsive" alt="">
+
+ </div>
+
+
+      </div>
+
+
+</div>
     <!-- Fixed navbar -->
     <div id="navigation" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -34,7 +49,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><b>adminlte-laravel</b></a>
+                <a class="navbar-brand" href="#"><b>Exam Controller Office Nstu </b></a>
             </div>
             <div class="navbar-collapse collapse">
 
@@ -49,17 +64,15 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             </div><!--/.nav-collapse -->
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="well">
-                <h2>WELL COME TO Exam Controller System</h2>
-            </div>
 
-            </div>
-    </div>
 
 
    </div>
+
+
+
+
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

@@ -6,6 +6,7 @@
 
 
 @section('main-content')
+<div class="row" >
     <div class="col-md-8">
         <h3>Find Your Course for desired semister</h3>
     </div>
@@ -31,5 +32,22 @@
     {{ Form::submit('search courses', array('class' => 'btn btn-success btn-sm btn-block', 'style' => 'margin-top: 30px;')) }}
         </div>
     {!! Form::close() !!}
+    </div>
+  </div>
+  </br></br></br>
+    <div class="row" >
+    <div class="col-md-12 ">
+    <div class="btn btn-primary btn-md btn-block" >
+      <a href="{{route('course.courseentrydownload')}}" style="color:black;"><strong>Download Course Entry Form</strong></a>
+
+    </div>
+    <div class="btn btn-primary btn-md btn-block">
+      <a href="{{route('course.formdownload')}}" style="color:black;"><strong>Download Course Form and admit card</strong></a>
+    </div>
+    <div class="btn btn-primary btn-md btn-block" >
+      <a href="{{route('course.bformdownload')}}" style="color:black;"><strong>Download Bank Form</strong></a>
+
+    </div>
+    </div>
     </div>
 @endsection
