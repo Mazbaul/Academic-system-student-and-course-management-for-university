@@ -52,6 +52,7 @@ class UserController extends Controller
             'name'=>'required',
             'studentid'=>'required',
             'email'=>'required',
+
             'password' => 'required|min:6',
             'academicssn'=>'required',
 
@@ -65,6 +66,11 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->studentid = $request->studentid;
         $user->email = $request->email;
+        $user->father_name=$request->father_name;
+        $user->mother_name=$request->mother_name;
+        $user->parmanent_address=$request->parmanent_address;
+        $user->mailing_address=$request->mailing_address;
+        $user->mobile_number=$request->mobile_number;
         $user->password = bcrypt($request->password);
         $user->academicssn = $request->academicssn;
         $user->department_id = $request->department_id;

@@ -16,12 +16,22 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('father_name');
+            $table->string('mother_name');
+            $table->string('parmanent_address');
+            $table->string('mailing_address');
             $table->string('studentid');
             $table->string('email')->unique();
+            $table->integer('mobile_number');
             $table->string('password');
             $table->string('academicssn');
+            $table->integer('department_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
+        });
+
+        Schema::table('subjects', function ($table){
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
         });
     }
 
