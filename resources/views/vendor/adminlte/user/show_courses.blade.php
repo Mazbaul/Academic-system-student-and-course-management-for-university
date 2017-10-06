@@ -63,9 +63,10 @@
     </div>
     <br><br>
     <div class="row">
-        <div class="col-md-8">
+      <div class="col-md-6 col-md-offset-5">
+      <h4 style="color:blue;"><strong>Course Details</strong></h4>
 
-        </div>
+      </div>
 
         <div class="col-md-12">
             <table class="table">
@@ -97,17 +98,20 @@
             </table>
         </div>
         <div class="col-md-6">
-            <h5>Courses Of <strong>{{$course->department->name}}</strong> Department For <strong>Year-{{$course->year}},Term-{{$course->term}}</strong>  </h5>
+            <h5 style="color:red;">Courses Of <strong>{{$course->department->name}}</strong> Department For <strong>Year-{{$course->year}},Term-{{$course->term}}</strong>  </h5>
 
         </div>
         <div class="col-md-3 col-md-offset-9">
 
-            <h5><strong>Total Credit hour :  {{$course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')}}</strong> </h5>
+            <h5 style="color:red;"><strong>Total Credit hour :  {{$course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')}}</strong> </h5>
         </div>
     </div>
-
+</br></br>
      <div class="row">
+<div class="col-md-6 col-md-offset-5">
+<h4 style="color:blue;"><strong>Payment Details</strong></h4>
 
+</div>
          <div class="col-md-12">
              @if((($course->term)%2) > 0)
              <table class="table">
@@ -169,7 +173,7 @@
 
          <div class="col-md-3 col-md-offset-9">
 
-             <h5><strong>Total payment :
+             <h3 style="color:red;"><strong>Total payment :
                      @if((($course->term)%2) > 0)
                      {!! $payment->sum('admission_fee')+$payment->sum('seminar_libraryfee')+$payment->sum('transport_fee') + $payment->sum('student_trustfund') + $payment->sum('credithour_fee')* $course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour') + $payment->sum('central_libraryfee') !!}
 
@@ -179,7 +183,7 @@
              {!!$payment->sum('seminar_libraryfee')+$payment->sum('transport_fee') + $payment->sum('student_trustfund') + $payment->sum('credithour_fee')* $course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour') + $payment->sum('central_libraryfee') !!}
 
            @endif
-                 </strong> </h5>
+         </strong> </h3>
          </div>
 
      </div>
