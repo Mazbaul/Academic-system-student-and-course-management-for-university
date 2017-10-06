@@ -103,7 +103,7 @@
         </div>
         <div class="col-md-3 col-md-offset-9">
 
-            <h5 style="color:red;"><strong>Total Credit hour :  {{$course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')}}</strong> </h5>
+            <h3 style="color:red;"><strong>Total Credit hour :  {{$course->Where([['department_id','=',$course->department_id],['year','=',$course->year],['term','=',$course->term]])->sum('credit_hour')}}</strong> </h3>
         </div>
     </div>
 </br></br>
