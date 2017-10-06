@@ -34,9 +34,9 @@
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('/home') }}"> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li class="active"><a href="{{ url('/course') }}"> <span>Course Registration</span></a></li>
-            <li class="active"><a href="{{ url('/backlog') }}"> <span>Backlog Course Registration</span></a></li>
-            <li class="active"><a href="{{ url('/home') }}"> <span>Certificates</span></a></li>
+            <li class=""><a href="{{ url('/course') }}"> <span>Course Registration</span></a></li>
+            <li class=""><a href="{{ url('/backlog') }}"> <span>Backlog Course Registration</span></a></li>
+            <li class=""><a href="{{ url('/home') }}"> <span>Certificates</span></a></li>
 
 
 
