@@ -38,7 +38,7 @@
             <li><a href="{{ url('/admin/users') }}"><span>Students</span></a></li>
             <li><a href="{{route('courses.index')}}"><span>Course Entry</span></a></li>
             <li><a href="{{ url('/admin/registered') }}"><span>Registered Students Regular</span></a></li>
-            <li><a href="{{ url('/admin/registered/backlog') }}"><span>Registered Students Backlog</span></a></li>
+            <li><a href="{{ url('/admin/registered/backlog') }}"><span>Application for Certificates</span></a></li>
 
         <!-- <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
