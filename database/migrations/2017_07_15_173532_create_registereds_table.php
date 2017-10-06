@@ -15,7 +15,7 @@ class CreateRegisteredsTable extends Migration
     {
         Schema::create('registereds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('student_id');
+            $table->string('user_id');
             $table->integer('department_id');
             $table->integer('year');
             $table->integer('term');
@@ -27,7 +27,7 @@ class CreateRegisteredsTable extends Migration
 
         Schema::table('registereds', function ($table){
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
-            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
