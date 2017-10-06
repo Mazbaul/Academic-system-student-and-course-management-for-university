@@ -78,5 +78,25 @@ class PDFController extends Controller
 
       }
 
+      //backlogbankform
+      public function backlogbankform(Request $request)
+      {
+
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->id;
+
+
+         $registered=Registered::Where([['department_id','=',$did],['user_id','=',$userid]])->latest()->first();
+
+         $course=Course::all();
+         $payment=Payment::all();
+
+
+          $pdf=\PDF::loadView('adminlte::pdf.backlogbankform',compact('course','registered','payment'));
+          return $pdf->download('bankform.pdf');
+
+
+      }
+
 
 }
