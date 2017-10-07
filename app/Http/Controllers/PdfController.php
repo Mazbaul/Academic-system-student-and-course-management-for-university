@@ -93,7 +93,7 @@ class PDFController extends Controller
 
 
           $pdf=\PDF::loadView('adminlte::pdf.backlogbankform',compact('course','registered','payment'));
-          return $pdf->download('bankform.pdf');
+          return $pdf->download('backlogbankform.pdf');
 
 
       }

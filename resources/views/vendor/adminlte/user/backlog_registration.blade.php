@@ -74,7 +74,7 @@
             <a href="{{route('course.backlogcourseentrydownload')}}" style="color:black;"><strong>Download Backlog Course Form and admit card</strong></a>
           </div>
           <div class="btn btn-primary btn-md btn-block ">
-            <a href="{{route('course.bformdownload')}}" style="color:black;"><strong>Download Bank Form For Backlog</strong></a>
+            <a href="{{route('course.backbformdownload')}}" style="color:black;"><strong>Download Bank Form For Backlog</strong></a>
 
           </div>
 
