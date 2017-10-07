@@ -6,5 +6,16 @@ use Illuminate\Http\Request;
 
 class CertificateController extends Controller
 {
-    //
+  public function __construct()
+  {
+      $this->middleware('auth:web');
+  }
+
+
+
+  public function index()
+  {
+      return view('adminlte::certificates.index');
+
+  }
 }

@@ -27,6 +27,9 @@ Route::get('/course/register/pdf/entryform','PDFController@courseentryform')->na
 Route::get('/course/register/pdf/backlogentryform','PDFController@backlogcourseform')->name('course.backlogcourseentrydownload');
 Route::get('/backlog','BacklogRegistrationController@index')->name('backlog.registration');
 Route::post('/backlog/register','BacklogRegistrationController@add')->name('backlog.add');
+Route::get('/certificate','CertificateController@index')->name('certificate.home');
+
+
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
