@@ -61,15 +61,15 @@
       </div>
 
 <div class="row">
-         <div class="col-md-6 col-md-offset-4">
-            {{ Form::submit('Register for Backlog Course', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
+         <div class="col-md-10 col-md-offset-1">
+            {{ Form::submit('Register for Backlog Course', array('class' => 'btn btn-primary btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
             {!! Form::close() !!}
           </div>
         </div>
         </br></br></br>
 
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-10 col-md-offset-1">
           <div class="btn btn-primary btn-md btn-block ">
             <a href="{{route('course.backlogcourseentrydownload')}}" style="color:black;"><strong>Download Backlog Course Form and admit card</strong></a>
           </div>

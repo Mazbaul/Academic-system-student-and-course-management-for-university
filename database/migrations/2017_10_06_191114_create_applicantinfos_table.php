@@ -18,6 +18,12 @@ class CreateApplicantinfosTable extends Migration
           $table->string('applicationtype_id');
           $table->integer('department_id');
           $table->integer('user_id');
+          $table->integer('exam_year');
+          $table->integer('cgpa');
+          $table->integer('result_publication_date');
+          $table->integer('total_credite');
+          $table->integer('completed_credite');
+          $table->integer('date_of_birth');
           $table->timestamps();
       });
 

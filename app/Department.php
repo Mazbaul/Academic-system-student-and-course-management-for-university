@@ -38,5 +38,9 @@ class Department extends Model
         return $this->hasMany('App\Backlog');
 
     }
+    public function Applicationinfo()
+    {
+        return $this->hasMany('App\Applicationinfo');
 
+    }
 }

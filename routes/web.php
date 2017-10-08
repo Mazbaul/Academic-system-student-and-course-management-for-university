@@ -28,6 +28,7 @@ Route::get('/course/register/pdf/backlogentryform','PDFController@backlogcoursef
 Route::get('/backlog','BacklogRegistrationController@index')->name('backlog.registration');
 Route::post('/backlog/register','BacklogRegistrationController@add')->name('backlog.add');
 Route::get('/certificate','CertificateController@index')->name('certificate.home');
+Route::post('/certificate/maincertificate','CertificateController@store')->name('certificate.store');
 
 
 
