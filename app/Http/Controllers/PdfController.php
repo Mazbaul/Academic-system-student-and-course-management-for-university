@@ -120,14 +120,9 @@ class PDFController extends Controller
       //download main certifiacte form
       public function maincertificateform(Request $request)
       {
-          $did=Auth::User()->department_id;
-          $userid=Auth::User()->studentid;
-          $backloga=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
-          $backlogb=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
-
-
-          $pdf=\PDF::loadView('adminlte::pdf.BacklogCourseregform',compact('backloga','backlogb'));
-          return $pdf->download('backlogcourseregform.pdf');
+      
+        $pdf=\PDF::loadView('adminlte::pdf.maincertificate');
+        return $pdf->download('maincertificateform.pdf');
 
 
       }

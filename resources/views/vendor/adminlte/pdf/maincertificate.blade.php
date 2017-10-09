@@ -59,28 +59,6 @@
       </tr>
 
 
-        @foreach($course as $course)
-
-        @if((Auth::User()->department_id)==($course->department_id)&& ($registered->year)==($course->year)&& ($registered->term)==($course->term))
-
-          <tr>
-              <td></td>
-              <td>{{$course->course_code}}</td>
-              <td>{{$course->course_title}}</td>
-              <td>{{$course->credit_hour}}</td>
-                <td>{{$course->year}}</td>
-                <td>{{$course->term}}</td>
-
-
-
-
-
-          </tr>
-
-          @endif
-      @endforeach
-
-
 </table>
 </div>
 <br>
