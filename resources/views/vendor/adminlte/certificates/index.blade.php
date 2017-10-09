@@ -70,14 +70,27 @@
   <div class="row" >
   <div class="col-md-12 ">
   <div class="btn btn-primary btn-md btn-block" >
-    <a href="{{route('course.courseentrydownload')}}" style="color:black;"><strong>Download Course Entry Form</strong></a>
+    <a href="{{route('certificate.maindownload')}}" style="color:black;"><strong>Download Main Certificate Form</strong></a>
 
   </div>
   <div class="btn btn-primary btn-md btn-block">
-    <a href="{{route('course.formdownload')}}" style="color:black;"><strong>Download Course Form and admit card</strong></a>
+    <a href="{{route('certificate.provisionaldownload')}}" style="color:black;"><strong>Download Provisional certificate Form</strong></a>
   </div>
+
+  <div class="btn btn-primary btn-md btn-block">
+    <a href="{{route('certificate.transcriptdownload')}}" style="color:black;"><strong>Download Main Academic Transcript Form</strong></a>
+  </div>
+
+  <div class="btn btn-primary btn-md btn-block">
+    <a href="{{route('certificate.markconversiondownload')}}" style="color:black;"><strong>Download Grade To Mark Conversion Form</strong></a>
+  </div>
+
+  <div class="btn btn-primary btn-md btn-block">
+    <a href="{{route('certificate.resultdatedownload')}}" style="color:black;"><strong>Download Result Publication Date Certificate Form</strong></a>
+  </div>
+
   <div class="btn btn-primary btn-md btn-block" >
-    <a href="{{route('course.bformdownload')}}" style="color:black;"><strong>Download Bank Form</strong></a>
+    <a href="{{route('certificate.bankformdownload')}}" style="color:black;"><strong>Download Bank Form</strong></a>
 
   </div>
   </div>

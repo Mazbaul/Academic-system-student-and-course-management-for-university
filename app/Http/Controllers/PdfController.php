@@ -98,5 +98,95 @@ class PDFController extends Controller
 
       }
 
+      //certificatebankform
+      public function certificatebankform(Request $request)
+      {
 
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->id;
+
+
+         $registered=Registered::Where([['department_id','=',$did],['user_id','=',$userid]])->latest()->first();
+
+         $course=Course::all();
+         $payment=Payment::all();
+
+
+          $pdf=\PDF::loadView('adminlte::pdf.backlogbankform',compact('course','registered','payment'));
+          return $pdf->download('backlogbankform.pdf');
+
+
+      }
+      //download main certifiacte form
+      public function maincertificateform(Request $request)
+      {
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->studentid;
+          $backloga=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+          $backlogb=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+
+
+          $pdf=\PDF::loadView('adminlte::pdf.BacklogCourseregform',compact('backloga','backlogb'));
+          return $pdf->download('backlogcourseregform.pdf');
+
+
+      }
+
+      //Download Provisional certificate Form
+      public function provisionalcertificateform(Request $request)
+      {
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->studentid;
+          $backloga=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+          $backlogb=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+
+
+          $pdf=\PDF::loadView('adminlte::pdf.BacklogCourseregform',compact('backloga','backlogb'));
+          return $pdf->download('backlogcourseregform.pdf');
+
+
+      }
+
+      //Download Main Academic Transcript Form
+      public function academictranscriptform(Request $request)
+      {
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->studentid;
+          $backloga=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+          $backlogb=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+
+
+          $pdf=\PDF::loadView('adminlte::pdf.BacklogCourseregform',compact('backloga','backlogb'));
+          return $pdf->download('backlogcourseregform.pdf');
+
+
+      }
+      //Download Grade To Mark Conversion Form
+      public function markconversionform(Request $request)
+      {
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->studentid;
+          $backloga=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+          $backlogb=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+
+
+          $pdf=\PDF::loadView('adminlte::pdf.BacklogCourseregform',compact('backloga','backlogb'));
+          return $pdf->download('backlogcourseregform.pdf');
+
+
+      }
+      //Download Result Publication Date Certificate Form
+      public function resultdateform(Request $request)
+      {
+          $did=Auth::User()->department_id;
+          $userid=Auth::User()->studentid;
+          $backloga=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+          $backlogb=Backlog::Where([['department_id','=',$did],['student_id','=',$userid]])->latest()->get();
+
+
+          $pdf=\PDF::loadView('adminlte::pdf.BacklogCourseregform',compact('backloga','backlogb'));
+          return $pdf->download('backlogcourseregform.pdf');
+
+
+      }
 }

@@ -27,11 +27,19 @@ Route::get('/course/register/pdf/entryform','PDFController@courseentryform')->na
 Route::get('/course/register/pdf/backlogentryform','PDFController@backlogcourseform')->name('course.backlogcourseentrydownload');
 Route::get('/backlog','BacklogRegistrationController@index')->name('backlog.registration');
 Route::post('/backlog/register','BacklogRegistrationController@add')->name('backlog.add');
+
+//certifate
 Route::get('/certificate','CertificateController@index')->name('certificate.home');
+Route::get('/certificate/mainform/download','PDFController@maincertificateform')->name('certificate.maindownload');
+Route::get('/certificate/provisionalform/download','PDFController@provisionalcertificateform')->name('certificate.provisionaldownload');
+Route::get('/certificate/transcriptform/download','PDFController@academictranscriptform')->name('certificate.transcriptdownload');
+Route::get('/certificate/markconversionform/download','PDFController@markconversionform')->name('certificate.markconversiondownload');
+Route::get('/certificate/resultdateform/download','PDFController@resultdateform')->name('certificate.resultdatedownload');
+Route::get('/certificate/certificatebankform/download','PDFController@certificatebankform')->name('certificate.bankformdownload');
 Route::post('/certificate/maincertificate','CertificateController@store')->name('certificate.store');
 
 
-
+//admin
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@adminlogin')->name('admin.login.submit');
