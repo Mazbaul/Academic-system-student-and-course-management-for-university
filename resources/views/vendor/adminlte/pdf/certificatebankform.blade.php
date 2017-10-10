@@ -77,17 +77,17 @@ foreach($course as $course)
 
 
           <tr>
-              <td>Admission Fee</td>
+              <td>Certificate Fee</td>
               <td></td>
           </tr>
           <tr>
 
-              <td>Credit fee</td>
-<td></td>
+              <td>Transcript fee</td>
+              <td></td>
           </tr>
           <tr>
 
-              <td>Total Credit fee</td>
+              <td>Other Fee</td>
               <td></td>
           </tr>
 
