@@ -25,90 +25,79 @@
   <div class="container">
 <div class="row">
   <h2 style="text-align:center;">Noakhali Science And Technology University</h2>
-  <h4 style="text-align:center;">Noakhali-3814,Bangladesh</h4><br>
-    <h3 style="text-align:center;">Course Registration Form</h3><br><br>
-    <div class="col-md-2" style=" padding-left:600px;padding-bottom:-120px;">
-      <div style="height:100px; border:1px solid; text-align:center; padding-top:50px;">Add Photo Here</div>
+  <h4 style="text-align:center;">Noakhali-3814,Bangladesh</h4>
+    <h4 style="text-align:center;">BSc/Pharmacy/MSc</h4>
+    <h4 style="text-align:center;">Application For Main Certificate/Provisional Certificate</h4>
+    <div class="col-md-2" style=" padding-left:620px;padding-top:-200px;">
+      <div style="height:120px; border:1px solid; text-align:center; padding-top:20px;">Add A Passport Size Photo Attested By Chairman Of Your Department</div>
     </div>
 </div>
 
 
     <div class="row">
       <div class="col-md-8 " style="padding-left:50px;">
-<div class="col-md-2"><strong>Student Name </strong>:{{Auth::User()->name}}</div><br>
-<div class="col-md-2"><strong>Roll </strong>:{{Auth::User()->studentid}}</div><br>
-<div class="col-md-2"><strong>Email </strong>:{{Auth::User()->email}}</div><br>
-<div class="col-md-2"><strong>Session </strong>:{{Auth::User()->academicssn}}</div><br>
-<div class="col-md-2"><strong>Father's Name:</strong>............................</div><br>
-<div class="col-md-2"><strong>Mother's Name:</strong>............................</div><br>
-<div class="col-md-2"><strong>Department Name </strong>:{{Auth::User()->department->name}}</div><br>
-<div class="col-md-2"><strong>Hall :</strong>Abdus Salam Hall</div><br>
-<div class="col-md-2"><strong>Date Of Commencement Of Examination:</strong>............................</div><br><br>
+<div class="col-md-2" ><strong>01.Student Name :</strong>{{strtoupper(Auth::User()->name)}}</div><br>
+<div class="col-md-2" style="text-align:left;padding-top:-5px;padding-right:50px;"><strong>02.Father's Name:</strong>{{strtoupper(Auth::User()->father_name)}}</div><br>
+<div class="col-md-2" style="text-align:right;padding-top:-35px;padding-right:30px;"><strong>03.Mother's Name:</strong>{{strtoupper(Auth::User()->mother_name)}}</div>
+<div class="col-md-2" ><strong>04.Parmanent Address:</strong>{{Auth::User()->parmanent_address}}</div><br>
+<div class="col-md-2" ><strong>05.Mailing Address:</strong>{{Auth::User()->mailing_address}}</div><br>
+
+
+<div class="col-md-2" style="text-align:left;"><strong>06.Mobile Number:</strong>{{strtoupper(Auth::User()->mobile_number)}}</div>
+<div class="col-md-2" style="text-align:center;padding-top:-20px;padding-right:50px;"><strong>07.Exam Year:</strong>...................</div>
+<div class="col-md-2" style="text-align:right;padding-top:-20px;padding-right:30px;"><strong>08.Result Publish date:</strong>....................</div><br>
+<div class="col-md-2" style="text-align:left;"><strong>09.Roll </strong>:{{strtoupper(Auth::User()->studentid)}}</div><br>
+<div class="col-md-2" style="text-align:center;padding-top:-40px;padding-right:50px;"><strong>10.Email </strong>:{{Auth::User()->email}}</div><br>
+<div class="col-md-2" style="text-align:right;padding-top:-60px;padding-right:30px;"><strong>11.Session </strong>:{{Auth::User()->academicssn}}</div>
+<div class="col-md-2" style="text-align:left;padding-top:-20px;"><strong>12.CGPA </strong>:..........</div>
+<div class="col-md-2" style="text-align:center;padding-top:-20px;padding-right:70px;"><strong>13.Total Credite </strong>:...................</div><br>
+<div class="col-md-2" style="text-align:right;padding-top:-40px;padding-right:20px;"><strong>14.Completed Credite </strong>:................</div>
+<div class="col-md-2" style="text-align:left;padding-top:-10px;"><strong>15.Date Of Birth </strong>:.............................</div>
+<div class="col-md-2" style="text-align:center;padding-top:-20px;padding-right:30px;"><strong> Department Name </strong>: {{Auth::User()->department->name}}</div><br>
+<div class="col-md-2" style="text-align:right;padding-top:-40px;padding-right:20px;"><strong>Hall :</strong>Abdus Salam Hall</div>
 </div>
-</div>
-<div style="padding-left:50px;">
-<div style="padding-left:90px;">
-  <table>
-      <tr>
-          <th>Sl No.</th>
-          <th>Course Code    </th>
-          <th>   Course Title</th>
-          <th>   Credit Hour</th>
-          <th>   Year</th>
-          <th>   term</th>
-      </tr>
-
-
-        @foreach($course as $course)
-
-        @if((Auth::User()->department_id)==($course->department_id)&& ($registered->year)==($course->year)&& ($registered->term)==($course->term))
-
-          <tr>
-              <td></td>
-              <td>{{$course->course_code}}</td>
-              <td>{{$course->course_title}}</td>
-              <td>{{$course->credit_hour}}</td>
-                <td>{{$course->year}}</td>
-                <td>{{$course->term}}</td>
-
-
-
-
-
-          </tr>
-
-          @endif
-      @endforeach
-
-
-</table>
-</div>
-<br>
-<div>
-<strong>Percentage of Attendance:</strong>.....................................
-
 
 </div>
-<br><br><br><br>
-
- </div>
- <div style="padding-left:50px;">
-   <div class="col-md-2" style=" padding-left:500px;padding-bottom:-100px;">
-     <div style="padding-top:50px;">
+<div style="text-align:left;padding-left:50px;">
+<p > I, <strong>{{strtoupper(Auth::User()->name)}}</strong> , here by declare that the above furnished information is authentic to the best of my knowledge. </p>
+</div>
+<div style="text-align:left;padding-top:10px;padding-left:50px;">
+<strong>Date:</strong>...............................
+</div>
+<div style="text-align:right;padding-top:-50px;padding-right:30px;">
+<p>.................................... </p>
+<strong>Applicant Signature</strong>
+</div>
+ <div style="text-align:left;padding-top:5px;padding-left:50px;">
 <p>---------------------</p>
        <strong>Provost</strong>
      </div>
-   </div>
-<div>
+<div style="text-align:right;padding-top:-50px;padding-right:30px;">
 <p>---------------------</p>
- <strong>Chairman</strong>
+ <strong>Department Chairman</strong>
 </div>
-
+<div style="text-align:center;"><p>For Office Use Only</p>
+</div>
+<div style="text-align:left;padding-left:50px;">
+<p > <strong>Serial Number:</strong>.....................Certificate Issued On <strong>Date:</sttrong>................</p>
+</div>
+<div style="text-align:center;padding-top:5px;padding-left:50px;">
+<p>---------------------</p>
+      <strong>Made by</strong>
+    </div>
+<div style="text-align:left;padding-top:-70px;padding-left:50px;">
+<p>---------------------</p>
+      <strong>Auditor</strong>
+    </div>
+<div style="text-align:right;padding-top:-70px;padding-right:30px;">
+<p>---------------------</p>
+<strong>Exam Controller</strong>
+</div>
+<div style="text-align:left;padding-left:50px;">
+<p ><strong>Note:</strong>Applicant Must Have to Attach Attested Photocopy Of SSC/HSC Certificate With This Application Form.If there Is Any Mistake Please Return The Certificate To Exam Controller Office. </p>
+</div>
  </div>
 
-</div>
-<br>
-<div class="page-break"></div>
 
 </body>
 
