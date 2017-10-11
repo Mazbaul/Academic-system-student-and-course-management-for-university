@@ -34,10 +34,10 @@
         <ul class="sidebar-menu">
             <li class="header"></li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('/home') }}"> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li class=""><a href="{{ url('/course') }}"> <span>Course Registration</span></a></li>
-            <li class=""><a href="{{ url('/backlog') }}"> <span>Backlog Course Registration</span></a></li>
-            <li class=""><a href="{{ url('/certificate') }}"> <span>Certificates</span></a></li>
+            <li class="{{ Request::is('home') ? "active" : "" }}"><a href="{{ url('/home') }}"> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="{{ Request::is('course') ? "active" : "" }}"><a href="{{ url('/course') }}"> <span>Course Registration</span></a></li>
+            <li class="{{ Request::is('backlog') ? "active" : "" }}"><a href="{{ url('/backlog') }}"> <span>Backlog Course Registration</span></a></li>
+            <li class="{{ Request::is('certificate') ? "active" : "" }}"><a href="{{ url('/certificate') }}"> <span>Certificates</span></a></li>
 
 
 
