@@ -40,7 +40,7 @@
         <div class="col-md-2" style="text-align:right;padding-top:-35px;padding-right:80px;"><strong>Mother's Name:</strong>............................</div>
         <div class="col-md-2" style="text-align:left;"><strong>Roll </strong>:{{Auth::User()->studentid}}</div>
         <div class="col-md-2" style="text-align:center;padding-top:-20px;padding-right:50px;"><strong>Email </strong>:{{Auth::User()->email}}</div>
-        <div class="col-md-2" style="text-align:right;padding-top:-20px;padding-right:30px;"><strong>Session </strong>:{{Auth::User()->academicssn}}</div><br>
+        <div class="col-md-2" style="text-align:right;padding-top:-20px;padding-right:80px;"><strong>Session </strong>:{{Auth::User()->academicssn}}</div><br>
         <div class="col-md-2" style="text-align:left;padding-top:-5px;padding-right:50px;"><strong>Department Name </strong>:{{Auth::User()->department->name}}</div>
         <div class="col-md-2" style="text-align:right;padding-top:-20px;padding-right:80px;"><strong>Hall :</strong>Abdus Salam Hall</div><br>
         <div class="col-md-2"><strong>Date Of Commencement Of Examination:</strong>............................</div><br><br>
@@ -50,7 +50,7 @@
 <div style="padding-left:50px;width:100%;">
   <table>
       <tr>
-          <th>Sl No.</th>
+
           <th>Course Code    </th>
           <th>   Course Title</th>
           <th>   Credit Hour</th>
@@ -64,7 +64,7 @@
         @if((Auth::User()->department_id)==($course->department_id)&& ($registered->year)==($course->year)&& ($registered->term)==($course->term))
 
           <tr>
-              <td></td>
+
               <td>{{$course->course_code}}</td>
               <td>{{$course->course_title}}</td>
               <td>{{$course->credit_hour}}</td>
@@ -132,6 +132,7 @@
 
 <div class="col-md-2" style=" padding-left:500px;padding-bottom:-100px;">
   <div style="padding-top:50px;">
+    <p>---------------------</p>
 <p><strong>Controller of Examination</strong></p>
     <strong>NSTU</strong>
   </div>

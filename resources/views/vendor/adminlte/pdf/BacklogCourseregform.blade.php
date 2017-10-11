@@ -154,6 +154,7 @@
 
 <div class="col-md-2" style=" padding-left:500px;padding-bottom:-100px;">
   <div style="padding-top:50px;">
+    <p>---------------------</p>
 <p><strong>Controller of Examination</strong></p>
     <strong>NSTU</strong>
   </div>
