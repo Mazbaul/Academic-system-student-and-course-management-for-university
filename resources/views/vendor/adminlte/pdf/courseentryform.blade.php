@@ -25,10 +25,10 @@
   <div class="container">
 <div class="row">
   <h2 style="text-align:center;">Noakhali Science And Technology University</h2>
-  <h4 style="text-align:center;">Noakhali-3814,Bangladesh</h4><br>
-    <h3 style="text-align:center;">Course Registration Form</h3><br><br>
-    <div class="col-md-2" style=" padding-left:600px;padding-bottom:-120px;">
-      <div style="height:100px; border:1px solid; text-align:center; padding-top:50px;">Add Photo Here</div>
+  <h4 style="text-align:center;">Noakhali-3814,Bangladesh</h4>
+    <h3 style="text-align:center;">Course Registration Form</h3>
+    <div class="col-md-2" style=" padding-left:620px;padding-bottom:-200px;">
+      <div style="height:120px; border:1px solid; text-align:center; padding-top:20px;">Add Photo Here</div>
     </div>
 </div>
 

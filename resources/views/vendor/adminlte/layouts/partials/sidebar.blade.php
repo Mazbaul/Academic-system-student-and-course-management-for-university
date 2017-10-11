@@ -36,8 +36,8 @@
             <li class="{{ Request::is('admin') ? "active" : "" }}"><a href="{{ url('/admin') }}"> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li class="{{ Request::path() == 'admin/notice' ? "active" : "" }}"><a href="{{ url('/admin/notice') }}"><span>Notices</span></a></li>
             <li class="{{ Request::path() == 'admin/users' ? "active" : "" }}"><a href="{{ url('/admin/users') }}"><span>Students</span></a></li>
-            <li class="{{ Request::path() == 'admin/departments/create' ? "active" : "" }}"><a href="{{route('departments.create')}}">Department Entry</a></li>
-            <li class="{{ Request::path() == 'admin/users/create' ? "active" : "" }}"><a href="{{route('users.create')}}">Student Entry</a></li>
+            <li class="{{ Request::path() == 'admin/departments/create' ? "active" : "" }}"><a href="{{route('departments.create')}}"><span>Department Entry</span></a></li>
+            <li class="{{ Request::path() == 'admin/users/create' ? "active" : "" }}"><a href="{{route('users.create')}}"><span>Student Entry</span></a></li>
             <li class="{{ Request::path() == 'admin/courses' ? "active" : "" }}"><a href="{{route('courses.index')}}"><span>Course Entry</span></a></li>
             <li class="{{ Request::path() == 'admin/registered' ? "active" : "" }}"><a href="{{ url('/admin/registered') }}"><span>Registered Students Regular</span></a></li>
             <li class="{{ Request::path() == 'admin/registered/backlog' ? "active" : "" }}"><a href="{{ url('/admin/registered/backlog') }}"><span>Registered Students Backlog</span></a></li>
