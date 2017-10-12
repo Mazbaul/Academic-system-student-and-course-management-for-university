@@ -5,6 +5,18 @@
 @endsection
 
 @section('main-content')
+<div >
+    <div >
+        @if(Session::has('error'))
+            <div class="alert alert-danger" role="alert">
+
+                {{Session::get('error')}}
+            </div>
+
+    </div>
+    @endif
+
+</div>
     <div class="row">
         <div class="col-md-4">
             <h1>ALL STUDENTS</h1>

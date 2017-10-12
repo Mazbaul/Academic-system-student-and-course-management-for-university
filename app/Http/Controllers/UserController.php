@@ -83,9 +83,16 @@ class UserController extends Controller
     }
 
     public function show($id){
-        $user=User::Where('department_id','=',$id)->get();
+      $user=User::Where('department_id','=',$id)->get();
+      if(!($user->isempty()))
+      {
         return view('adminlte::user.show')->withUser($user);
+}
+else{
+  Session::flash('error','No student in this department');
+  return redirect()->route('users.index');
 
+}
     }
 
 }
