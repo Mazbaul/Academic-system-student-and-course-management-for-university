@@ -43,14 +43,14 @@
         <div class="col-md-12">
             <h1>Existing Departments</h1>
             <table class="table">
-                <thead>
+                <thead style="background-color:white;">
                 <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
                 </thead>
                 <tbody>
                 @foreach($departments as $department)
-                    <tr>
+                    <tr style="background-color:white;">
                         <th>{{$department->id}}</th>
                         <td>{{$department->name}}</td>
                         <td>{{$department->email}}</td>

@@ -10,8 +10,8 @@ class Applicationtype extends Model
 
     public function Applicationinfo()
     {
-        return $this->belongsTo('App\Applicationinfo');
+        return $this->hasMany('App\Applicationinfo');
     }
-    
+
 
 }

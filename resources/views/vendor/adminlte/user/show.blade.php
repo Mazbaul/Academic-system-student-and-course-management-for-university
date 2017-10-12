@@ -19,25 +19,25 @@
     <div class="row">
         <div class="col-md-12">
             <table class="table">
-                <thead>
+                <thead style="background-color:white;">
                 <th>#</th>
                 <th>Name</th>
                 <th>Student Id</th>
                 <th>Email</th>
                 <th>Session</th>
                 <th>Department</th>
-                <th></th>
+
                 </thead>
                 <tbody>
                 @foreach($user as $user)
-                    <tr>
+                    <tr style="background-color:white;">
                         <th>{{$user->id}}</th>
                         <td>{{$user->name}}</td>
                         <td>{{$user->studentid}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->academicssn}}</td>
                         <td>{{$user->department->name}}</td>
-                        <td>{{date('M j, Y',strtotime($user->created_at))}}</td>
+
 
                     </tr>
                 @endforeach

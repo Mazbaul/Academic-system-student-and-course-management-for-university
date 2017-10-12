@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-md-12">
             <table class="table">
-                <thead>
+                <thead style="background-color:white;">
                 <th>Name</th>
                 <th>Student Id</th>
                 <th>Email</th>
@@ -44,7 +44,7 @@
                 </thead>
                 <tbody>
                 @foreach($registered as $registered)
-                    <tr>
+                    <tr style="background-color:white;">
                         <td>{{$registered->user->name}}</td>
                         <td>{{$registered->user->studentid}}</td>
                         <td>{{$registered->user->email}}</td>

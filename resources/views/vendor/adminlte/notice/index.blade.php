@@ -29,17 +29,18 @@
       <div class="row">
          <div class="col-md-12">
              <table class="table">
-                 <thead>
+                 <thead style="background-color:white;">
                     <th>#</th>
                     <th>Tittle</th>
                     <th>Notice</th>
                     <th>Published Date</th>
                     <th></th>
+                    <th></th>
                  </thead>
                  <tbody>
                    @foreach($notice as $notice)
-                       <tr>
-                           <th>{{$notice->id}}</th>
+                       <tr style="background-color:white;">
+                           <td>{{$notice->id}}</td>
                            <td>{!!$notice->tittle!!}</td>
                            <td>{!!substr($notice->notice,0,50)!!}{!!strlen($notice->notice)>50 ?"..........." :""!!}</td>
                            <td>{{date('M j, Y',strtotime($notice->created_at))}}</td>

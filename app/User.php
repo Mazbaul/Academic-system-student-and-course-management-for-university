@@ -27,7 +27,7 @@ class User extends  Authenticatable
     }
     public function Applicationinfo()
     {
-        return $this->belongsTo('App\Applicationinfo');
+        return $this->hasMany('App\Applicationinfo');
     }
     protected $fillable = [
         'name', 'email','studentid', 'password','academicssn',

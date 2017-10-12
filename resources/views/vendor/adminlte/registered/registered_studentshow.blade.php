@@ -31,9 +31,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" style="background-color:white;">
             <table class="table">
-                <thead>
+                <thead >
                 <th>Name</th>
                 <th>Student Id</th>
                 <th>Email</th>
@@ -44,7 +44,7 @@
                 </thead>
                 <tbody>
                 @foreach($user as $user)
-                    <tr>
+                    <tr >
                         <td>{{$user->name}}</td>
                         <td>{{$user->studentid}}</td>
                         <td>{{$user->email}}</td>

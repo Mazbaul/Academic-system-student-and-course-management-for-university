@@ -53,6 +53,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/registered','RegisteredUserController@index')->name('registered.student');
     Route::post('/registered/show','RegisteredUserController@show')->name('registered.show');
     Route::get('/registered/backlog','RegisteredbacklogUserController@index')->name('registered.studentbacklog');
+    Route::get('/certificateapp/show','AdminCertificateController@index')->name('certificateapp.show');
 
 
 });

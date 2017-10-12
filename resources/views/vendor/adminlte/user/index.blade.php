@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-12">
             <table class="table">
-                <thead>
+                <thead style="background-color:white;">
 
                 <th>Department Name</th>
                 <th>Total Student</th>
@@ -31,7 +31,7 @@
                 </thead>
                 <tbody>
                 @foreach($departments as $department)
-                    <tr>
+                    <tr style="background-color:white;">
                         <th>{{$department->name}}</th>
                         <th>{{$department->users()->count()}}</th>
 

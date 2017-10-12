@@ -9,7 +9,7 @@ class Applicantinfo extends Model
     //
     public function Applicationtype()
     {
-        return $this->hasMany('App\Applicationtype');
+        return $this->belongsTo('App\Applicationtype');
 
     }
     public function Department()
@@ -18,7 +18,7 @@ class Applicantinfo extends Model
     }
     public function User()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsTo('App\User','user_id');
     }
 
 }
