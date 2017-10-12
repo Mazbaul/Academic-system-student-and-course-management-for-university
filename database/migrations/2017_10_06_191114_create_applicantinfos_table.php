@@ -16,14 +16,14 @@ class CreateApplicantinfosTable extends Migration
       Schema::create('applicantinfos', function (Blueprint $table) {
           $table->increments('id');
           $table->string('applicationtype_id');
-          $table->integer('department_id');
-          $table->integer('user_id');
-          $table->integer('exam_year');
-          $table->integer('cgpa');
-          $table->integer('result_publication_date');
-          $table->integer('total_credite');
-          $table->integer('completed_credite');
-          $table->integer('date_of_birth');
+          $table->string('department_id');
+          $table->string('user_id');
+          $table->string('exam_year');
+          $table->string('cgpa');
+          $table->string('result_publication_date');
+          $table->string('total_credite');
+          $table->string('completed_credite');
+          $table->string('date_of_birth');
           $table->timestamps();
       });
 

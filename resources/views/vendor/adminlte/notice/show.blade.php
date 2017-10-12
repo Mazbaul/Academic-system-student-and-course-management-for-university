@@ -19,9 +19,9 @@
                <div class="col-md-12">
                    <table class="table">
 
-                       <tbody>
+                       <tbody >
 
-                           <tr>
+                           <tr >
 
 
                                {!!$notice->notice!!}

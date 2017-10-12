@@ -35,23 +35,23 @@
 </div>
 <div class="col-md-2">
         {{ Form::label('result_publication_date', 'Result Publication Date:') }}
-        {{ Form::number('result_publication_date', null, ['class' => 'form-control','placeholder'=>'type result publication date']) }}
+        {{ Form::date('result_publication_date', null, ['class' => 'form-control','placeholder'=>'type result publication date']) }}
 </div>
 <div class="col-md-2">
         {{ Form::label('cgpa', 'CGPA:') }}
-        {{ Form::number('cgpa', null, ['class' => 'form-control','placeholder'=>'type CGPA']) }}
+        {{ Form::number('cgpa', null, ['class' => 'form-control','step' => 'any','placeholder'=>'type CGPA']) }}
 </div>
 <div class="col-md-2">
         {{ Form::label('total_credite', 'Total Credite:') }}
-        {{ Form::number('total_credite', null, ['class' => 'form-control','placeholder'=>'type Total credite']) }}
+        {{ Form::number('total_credite', null, ['class' => 'form-control','step' => 'any','placeholder'=>'type Total credite']) }}
 </div>
 <div class="col-md-2">
         {{ Form::label('completed_credite', 'Completed Credite:') }}
-        {{ Form::number('completed_credite', null, ['class' => 'form-control','placeholder'=>'type completed credite']) }}
+        {{ Form::number('completed_credite', null, ['class' => 'form-control','step' => 'any','placeholder'=>'type completed credite']) }}
 </div>
 <div class="col-md-2">
         {{ Form::label('date_of_birth', 'Date of Birth:') }}
-        {{ Form::number('date_of_birth', null, ['class' => 'form-control','placeholder'=>'type date of birth']) }}
+        {{ Form::date('date_of_birth', null, ['class' => 'form-control','placeholder'=>'type date of birth']) }}
 </div>
 
         {{ Form::label('applicationtype_id', 'Applying For:',['style' => 'margin-top: 20px;']) }}
