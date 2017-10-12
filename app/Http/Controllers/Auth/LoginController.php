@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -76,6 +77,9 @@ class LoginController extends Controller
             // if successful, then redirect to their intended location
             return redirect()->intended(route('user.dashboard'));
         }
+        // if unsuccessful, then redirect back to the login with the form data
+
+        return redirect()->back()->withInput($request->only('email', 'remember'));
     }
     /**
      * Attempt to log the user into application using username as an email.
