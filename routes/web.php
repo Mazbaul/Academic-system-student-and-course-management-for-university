@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome')->withDepartments($departments=App\Department::all());
+})->name('welcome');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('user.dashboard');

@@ -29,10 +29,8 @@
             {{ csrf_field() }}
 
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <div class="col-md-4">
-                  <label for="email" class="control-label">Email :</label>
-                </div>
-                <div class=" col-md-8 form-group has-feedback">
+
+                <div class=" col-md-12 form-group has-feedback">
                     <input id="email" type="email" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="email" value="{{ old('email') }}" required autofocus>
                   <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     @if ($errors->has('email'))
@@ -45,10 +43,8 @@
             </div>
 
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-              <div class="col-md-4">
-                 <label for="password" class="col-md-6 control-label">Password :</label>
-              </div>
-                <div class="col-md-8 form-group has-feedback">
+
+                <div class="col-md-12 form-group has-feedback">
                     <input id="password" type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.password') }}" name="password" required>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @if ($errors->has('password'))

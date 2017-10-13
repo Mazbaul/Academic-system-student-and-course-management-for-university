@@ -31,10 +31,10 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showRegistrationForm()
-    {
-        return view('adminlte::auth.register');
-    }
+   public function showRegistrationForm()
+{
+        return redirect()->route('welcome');
+  }
 
     /**
      * Where to redirect users after login / registration.
