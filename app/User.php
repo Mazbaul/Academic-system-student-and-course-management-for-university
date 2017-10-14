@@ -30,7 +30,7 @@ class User extends  Authenticatable
         return $this->hasMany('App\Applicationinfo');
     }
     protected $fillable = [
-        'name', 'email','studentid', 'password','academicssn',
+        'name', 'email','studentid', 'password','academicssn','status',
     ];
 
     /**

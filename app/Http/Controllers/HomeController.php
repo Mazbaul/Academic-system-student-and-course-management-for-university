@@ -35,4 +35,6 @@ class HomeController extends Controller
     {
         return view('adminlte::user_home');
     }
+
+
 }

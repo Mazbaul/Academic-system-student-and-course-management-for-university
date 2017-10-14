@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 Use App\Registered;
 Use App\User;
+use Illuminate\Support\Facades\Session;
+
 class RegisteredUserController extends Controller
 {
       public function __construct()
@@ -33,7 +35,19 @@ class RegisteredUserController extends Controller
 
      }
 
+     public function newstudentrequest(){
+       $user=User::Where('status','=','0')->get();
+       if(!($user->isempty()))
+      {
+         return view('adminlte::user.newstudent_request')->withUser($user);
+     }
+     else{
+       Session::flash('error','No new request');
+       return redirect()->route('admin.dashboard');
 
+     }
+
+     }
 
 
 }

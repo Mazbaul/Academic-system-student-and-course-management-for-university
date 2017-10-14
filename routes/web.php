@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome')->withDepartments($departments=App\Department::all());
 })->name('welcome');
+Route::post('/request','WelcomeController@store')->name('request');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('user.dashboard');
@@ -47,10 +48,12 @@ Route::prefix('admin')->group(function() {
     Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
     Route::resource('/notice', 'NoticeController');
     Route::resource('/users', 'UserController');
+    Route::get('/registration/request/{id}', 'UserController@update')->name('users.update');
     Route::resource('/departments', 'DepartmentController');
     Route::resource('/courses', 'CourseController');
     Route::get('/email/{id}','AdminController@email')->name('sendemail');
     Route::get('/registered','RegisteredUserController@index')->name('registered.student');
+    Route::get('/registration/request', 'RegisteredUserController@newstudentrequest')->name('users.request');
     Route::post('/registered/show','RegisteredUserController@show')->name('registered.show');
     Route::get('/registered/backlog','RegisteredbacklogUserController@index')->name('registered.studentbacklog');
     Route::get('/certificateapp/show','AdminCertificateController@index')->name('certificateapp.show');

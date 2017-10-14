@@ -73,7 +73,7 @@ class LoginController extends Controller
         ]);
 
         // Attempt to log the user in
-        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password,'status' => '1'], $request->remember) ) {
             // if successful, then redirect to their intended location
             return redirect()->intended(route('user.dashboard'));
         }

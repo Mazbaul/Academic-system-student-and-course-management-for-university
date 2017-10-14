@@ -20,12 +20,13 @@ class CreateUsersTable extends Migration
             $table->string('mother_name');
             $table->string('parmanent_address');
             $table->string('mailing_address');
-            $table->string('studentid');
+            $table->string('studentid')->unique();
             $table->string('email')->unique();
             $table->integer('mobile_number');
             $table->string('password');
             $table->string('academicssn');
             $table->integer('department_id')->unsigned();
+            $table->boolean('status');
             $table->rememberToken();
             $table->timestamps();
         });

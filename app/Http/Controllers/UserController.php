@@ -74,6 +74,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         $user->academicssn = $request->academicssn;
         $user->department_id = $request->department_id;
+        $user->status = '0';
 
 
         $user->save();
@@ -93,6 +94,13 @@ class UserController extends Controller
        return redirect()->route('users.index');
 
           }
+    }
+    public function update(Request $request, $id)
+    {
+      $user=User::Where([['id','=',$id],['status','=','0']])->update(['status' => '1']);
+
+        return redirect()->route('users.request')->withUser($user);
+
     }
 
 }

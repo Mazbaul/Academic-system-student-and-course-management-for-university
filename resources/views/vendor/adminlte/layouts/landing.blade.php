@@ -28,12 +28,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="app" v-cloak>
   <div class="container" >
 
-  <div class="row">
 
-
-
-
-      </div>
       <div class="row" >
         <div class="col-md-6">
           <h3 style="color:white;">welcome To ExamController Office's Website</h3>
@@ -41,8 +36,28 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
           <div class="col-md-6" style="background-color:white;margin-top:20px;margin-bottom:20px;">
               <h1 style="text-align:center;">Request For Membership</h1>
+              <div class="row">
+                @if(Session::has('success'))
+                    <div class="alert alert-success col-md-8 col-md-offset-2" role="alert">
 
-              {!! Form::open(['route' => 'users.store']) !!}
+                        {{Session::get('success')}}
+                    </div>
+
+
+            @endif
+                    @if ($errors->any())
+              <div class="alert alert-danger col-md-8 col-md-offset-2">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+            @endif
+
+              </div>
+
+              {!! Form::open(['route' => 'request']) !!}
 
               <strong>{{ Form::label('name', 'Name of Student:') }}</strong>
               {{ Form::text('name', null, ['class' => 'form-control','placeholder'=>'type student name']) }}
@@ -85,10 +100,12 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
               </select>
 
 
-
+             @if(Auth::guest())
               {{ Form::submit('Send Request', array('class' => 'btn btn-success btn-md btn-block', 'style' => 'margin-top: 10px;margin-bottom:10px;')) }}
               {!! Form::close() !!}
-
+            @else
+            <h4 style="text-align:center;color:red;">You Are Already A member</h4>
+            @endif
           </div>
       </div>
 
