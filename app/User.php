@@ -23,7 +23,7 @@ class User extends  Authenticatable
     }
     public function registered()
     {
-        return $this->belongsTo('App\Registered');
+        return $this->hasMany('App\Registered');
     }
     public function Applicationinfo()
     {

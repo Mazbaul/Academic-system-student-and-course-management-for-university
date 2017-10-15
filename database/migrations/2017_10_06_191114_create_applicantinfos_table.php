@@ -24,6 +24,7 @@ class CreateApplicantinfosTable extends Migration
           $table->string('total_credite');
           $table->string('completed_credite');
           $table->string('date_of_birth');
+          $table->boolean('status');
           $table->timestamps();
       });
 

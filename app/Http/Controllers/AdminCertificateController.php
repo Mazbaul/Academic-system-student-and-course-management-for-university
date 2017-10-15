@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Applicantinfo;
+use App\Http\Controllers\timestamps;
 class AdminCertificateController extends Controller
 {
 
@@ -21,6 +22,14 @@ class AdminCertificateController extends Controller
 
   }
 
+  public function update(Request $request, $id)
+  {
 
+    Applicantinfo::Where([['id','=',$id],['status','=','0']])->update(['status' => '1']);
+    $applicantinfo=Applicantinfo::all();
+
+      return redirect()->route('certificateapp.show')->withUser($applicantinfo);
+
+  }
 
 }

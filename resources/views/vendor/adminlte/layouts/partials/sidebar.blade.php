@@ -36,13 +36,13 @@
             <li class="{{ Request::is('admin') ? "active" : "" }}"><a href="{{ url('/admin') }}"> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li class="{{ Request::path() == 'admin/notice' ? "active" : "" }}"><a href="{{ url('/admin/notice') }}"><span>Notices</span></a></li>
             <li class="{{ Request::path() == 'admin/users' ? "active" : "" }}"><a href="{{ url('/admin/users') }}"><span>Students</span></a></li>
-            <li class="{{ Request::path() == 'admin/registration/request' ? "active" : "" }}"><a href="{{ url('/admin/registration/request') }}"><span>Student Request</span></a></li>
+            <li class="{{ Request::path() == 'admin/registration/request' ? "active" : "" }}"><a href="{{ url('/admin/registration/request') }}"><span class="{{ !(App\User::where('status', '=' ,'0')->count())? "" : "label label-warning"}}">{{ !(App\User::where('status', '=' ,'0')->count())? "" : (App\User::where('status', '=' ,'0')->count())}}</span>Student Request</a></li>
             <li class="{{ Request::path() == 'admin/departments/create' ? "active" : "" }}"><a href="{{route('departments.create')}}"><span>Department Entry</span></a></li>
             <li class="{{ Request::path() == 'admin/users/create' ? "active" : "" }}"><a href="{{route('users.create')}}"><span>Student Entry</span></a></li>
             <li class="{{ Request::path() == 'admin/courses' ? "active" : "" }}"><a href="{{route('courses.index')}}"><span>Course Entry</span></a></li>
             <li class="{{ Request::path() == 'admin/registered' ? "active" : "" }}"><a href="{{ url('/admin/registered') }}"><span>Registered Students Regular</span></a></li>
             <li class="{{ Request::path() == 'admin/registered/backlog' ? "active" : "" }}"><a href="{{ url('/admin/registered/backlog') }}"><span>Registered Students Backlog</span></a></li>
-            <li class="{{ Request::path() == 'admin/certificateapp/show' ? "active" : "" }}"><a href="{{ url('/admin/certificateapp/show') }}"><span>Application for Certificates</span></a></li>
+            <li class="{{ Request::path() == 'admin/certificateapp/show' ? "active" : "" }}"><a href="{{ url('/admin/certificateapp/show') }}"><span class="{{ !(App\Applicantinfo::where('status', '=' ,'0')->count())? "" : "label label-warning"}}">{{ !(App\Applicantinfo::where('status', '=' ,'0')->count())? "" : (App\Applicantinfo::where('status', '=' ,'0')->count())}}</span><span>Application for Certificates</span></a></li>
 
         <!-- <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>

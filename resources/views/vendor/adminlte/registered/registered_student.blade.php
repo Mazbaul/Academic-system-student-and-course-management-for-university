@@ -49,7 +49,7 @@
                         <td>{{$registered->user->studentid}}</td>
                         <td>{{$registered->user->email}}</td>
                         <td>{{$registered->user->academicssn}}</td>
-                        <td>{{$registered->department->name}}</td>
+                        <td>{{$registered->user->department->name}}</td>
                         <td>{{$registered->year}}</td>
                         <td>{{$registered->term}}</td>
 
