@@ -22,6 +22,14 @@ class RegisteredbacklogUserController extends Controller
 
      }
 
+     public function showlist(Request $request)
+     {
+
+        $backlog=Backlog::where('student_id', '=' ,$request->student_id)->get();
+        return view('adminlte::registered.registeredbacklog_studentshow')->withBacklog($backlog);
+
+
+     }
 
 
 
