@@ -58,6 +58,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/registered/backlog','RegisteredbacklogUserController@index')->name('registered.studentbacklog');
     Route::get('/certificateapp/show','AdminCertificateController@index')->name('certificateapp.show');
     Route::get('/certificateapp/{id}', 'AdminCertificateController@update')->name('application.update');
+    Route::get('/certificateapp/verify/{id}', 'AdminCertificateController@verify')->name('application.verify');
+    Route::get('/registered/{id}','RegisteredUserController@update')->name('registered.update');
 
 
 

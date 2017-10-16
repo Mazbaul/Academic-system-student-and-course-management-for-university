@@ -32,4 +32,14 @@ class AdminCertificateController extends Controller
 
   }
 
+  public function verify(Request $request, $id)
+  {
+
+    Applicantinfo::Where([['id','=',$id],['verify','=','0']])->update(['verify' => '1']);
+    $applicantinfo=Applicantinfo::all();
+
+      return redirect()->route('certificateapp.show')->withUser($applicantinfo);
+
+  }
+
 }

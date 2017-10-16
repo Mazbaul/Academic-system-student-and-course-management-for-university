@@ -2,32 +2,37 @@
 
 
 @section('main-content')
+<div class="row">
+  @if(Session::has('error'))
+      <div class="alert alert-danger col-md-8 col-md-offset-2" role="alert">
+
+          {{Session::get('error')}}
+      </div>
+
+
+@endif
+
+</div>
 
     <div class="row">
         <div class="col-md-10">
 
             <h1>ALL Registered STUDENTS</h1>
-            <div class="col-md-6">
+            <div class="col-md-8" style="margin-bottom:10px;">
             {!! Form::open(['route' => 'registered.show']) !!}
 
 
-                <div class="col-md-3">
-            {{ Form::label('student_id', '') }}
-            {{ Form::text('student_id', null, ['class' => 'form-control','placeholder'=>'type studentid']) }}
-                </div>
+            <div class="col-md-6">
 
-                <div class="col-md-3">
-            {{ Form::submit('search', array('class' => 'btn btn-success btn-sm btn-block', 'style' => 'margin-top: 30px;')) }}
-                </div>
-            {!! Form::close() !!}
+        {{ Form::text('student_id', null, ['class' => 'form-control ','placeholder'=>' studentid']) }}
             </div>
 
+            <div class="col-md-2">
+        {{ Form::submit('search', array('class' => 'btn btn-success btn-sm btn-block', 'style' => 'margin-top: 0px;')) }}
+            </div>
+        {!! Form::close() !!}
         </div>
-        <div class="col-md-2">
 
-        </div>
-        <div class="col-md-12">
-            <hr>
         </div>
     </div>
     <div class="row">
@@ -43,15 +48,15 @@
                 <th>Registered for Term</th>
                 </thead>
                 <tbody>
-                @foreach($user as $user)
+                @foreach($registered as $registered)
                     <tr >
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->studentid}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->academicssn}}</td>
-                        <td>{{$user->department->name}}</td>
-                        <td>{{$user->year}}</td>
-                        <td>{{$user->term}}</td>
+                        <td>{{$registered->user->name}}</td>
+                        <td>{{$registered->user->studentid}}</td>
+                        <td>{{$registered->user->email}}</td>
+                        <td>{{$registered->user->academicssn}}</td>
+                        <td>{{$registered->user->department->name}}</td>
+                        <td>{{$registered->year}}</td>
+                        <td>{{$registered->term}}</td>
 
                     </tr>
                 @endforeach

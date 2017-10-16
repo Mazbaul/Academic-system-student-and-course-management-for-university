@@ -19,6 +19,7 @@
             <th>Applied At</th>
            <th>Delivered At</th>
            <th></th>
+           <th></th>
             </thead>
             <tbody>
 
@@ -37,6 +38,15 @@
                     <td>{{date('M j, Y',strtotime($applicantinfo->updated_at))}}</td>
                     @endif
                     <td>
+                     @if(($applicantinfo->verify) == '0')
+                    <a href="{{route('application.verify',$applicantinfo->id)}}" class="btn btn-sm btn-danger">Not Verified</a>
+                     @else
+
+                     <span >Verified  <i class="fa fa-check-square-o fa-2x " aria-hidden="true"></i></span>
+
+                     @endif
+                    </td>
+                    <td>
                      @if(($applicantinfo->status) == '0')
                     <a href="{{route('application.update',$applicantinfo->id)}}" class="btn btn-sm btn-danger">Not Delivered</a>
                      @else
@@ -45,6 +55,7 @@
 
                      @endif
                     </td>
+
                 </tr>
             @endforeach
 

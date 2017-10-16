@@ -37,7 +37,7 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->academicssn}}</td>
                         <td>{{$user->department->name}}</td>
-                        <td><a href="{{route('users.update',$user->id)}}" class="btn btn-sm btn-success">VERIFY</a> </td>
+                        <td><a href="{{route('users.update',$user->id)}}" class="btn btn-sm btn-danger">click to Approve</a> </td>
 
 
                     </tr>
