@@ -34,7 +34,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
           <h3 style="color:white;">welcome To ExamController Office's Website</h3>
         </div>
 
-          <div class="col-md-6" style="background-color:white;margin-top:20px;margin-bottom:20px;">
+          <div class="col-md-6" style="background-color:#ecf0f5;margin-top:20px;margin-bottom:20px;">
               <h1 style="text-align:center;">Request For Membership</h1>
               <div class="row">
                 @if(Session::has('success'))
