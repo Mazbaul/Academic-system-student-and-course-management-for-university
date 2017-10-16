@@ -14,28 +14,33 @@
 
 </div>
 
-    <div class="row">
-        <div class="col-md-10">
+<div class="row">
+  <div class="col-md-4" style="text-align:left;margin-bottom:10px;">
 
-            <h1>ALL Registered STUDENTS</h1>
-            <div class="col-md-8" style="margin-bottom:10px;">
-            {!! Form::open(['route' => 'registered.show']) !!}
+  <h4><strong>ALL Registered STUDENTS</strong></h4>
+
+  </div>
+    <div class="col-md-8" style="text-align:right;">
 
 
-                <div class="col-md-6">
+        <div class="col-md-8" style="margin-bottom:10px;">
+      {!! Form::open(['route' => 'registered.show']) !!}
 
-            {{ Form::text('student_id', null, ['class' => 'form-control ','placeholder'=>' studentid']) }}
-                </div>
 
-                <div class="col-md-2">
-            {{ Form::submit('search', array('class' => 'btn btn-success btn-sm btn-block', 'style' => 'margin-top: 0px;')) }}
-                </div>
-            {!! Form::close() !!}
+            <div class="col-md-5">
+
+        {{ Form::text('student_id', null, ['class' => 'form-control ','placeholder'=>' studentid']) }}
             </div>
 
+            <div class="col-md-3">
+        {{ Form::submit('search', array('class' => 'btn btn-success btn-sm btn-block', 'style' => 'margin-top: 0px;')) }}
+            </div>
+        {!! Form::close() !!}
         </div>
 
     </div>
+
+</div>
     <div class="row">
         <div class="col-md-12">
             <table class="table">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use App\Backlog;
+use Illuminate\Support\Facades\Route;
 class RegisteredbacklogUserController extends Controller
 {
       public function __construct()
@@ -31,6 +32,16 @@ class RegisteredbacklogUserController extends Controller
 
      }
 
+     public function update(Request $request, $id)
+     {
+       Backlog::Where([['id','=',$id],['status','=','0']])->update(['status' => '1']);
+          $backlog=Backlog::all();
+
+
+         return redirect()->route('registered.studentbacklog')->withBacklog($backlog);
+
+
+     }
 
 
 }

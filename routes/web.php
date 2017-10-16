@@ -57,6 +57,7 @@ Route::prefix('admin')->group(function() {
     Route::post('/registered/show','RegisteredUserController@show')->name('registered.show');
     Route::get('/registered/backlog','RegisteredbacklogUserController@index')->name('registered.studentbacklog');
     Route::post('/registered/backlog/show','RegisteredbacklogUserController@showlist')->name('backlog.show');
+    Route::get('/registered/backlog/{id}','RegisteredbacklogUserController@update')->name('backlog.update');
     Route::get('/certificateapp/show','AdminCertificateController@index')->name('certificateapp.show');
     Route::get('/certificateapp/{id}', 'AdminCertificateController@update')->name('application.update');
     Route::get('/certificateapp/verify/{id}', 'AdminCertificateController@verify')->name('application.verify');
