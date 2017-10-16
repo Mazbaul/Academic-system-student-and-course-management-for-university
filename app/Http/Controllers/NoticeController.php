@@ -24,8 +24,8 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        $notice=Notice::all();
-        return view('adminlte::notice.index')->withNotice($notice);
+        $notices=Notice::orderBy('id', 'desc')->paginate(5);
+        return view('adminlte::notice.index')->withNotices($notices);
 
     }
 

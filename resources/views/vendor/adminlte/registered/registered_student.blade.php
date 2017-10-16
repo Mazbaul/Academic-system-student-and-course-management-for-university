@@ -15,28 +15,25 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4" style="text-align:left;margin-bottom:10px;">
+  <div class="col-md-8 text-left" style="margin-bottom:10px;">
 
   <h4><strong>ALL Registered STUDENTS</strong></h4>
 
   </div>
-    <div class="col-md-8" style="text-align:right;">
+    <div class="col-md-4 text-right">
 
-
-        <div class="col-md-8" style="margin-bottom:10px;">
       {!! Form::open(['route' => 'registered.show']) !!}
 
-
-            <div class="col-md-5">
-
+       <div class="col-md-5">
         {{ Form::text('student_id', null, ['class' => 'form-control ','placeholder'=>' studentid']) }}
-            </div>
 
-            <div class="col-md-3">
+      </div>
+
+<div class="col-md-3 ">
         {{ Form::submit('search', array('class' => 'btn btn-success btn-sm btn-block', 'style' => 'margin-top: 0px;')) }}
-            </div>
+</div>
         {!! Form::close() !!}
-        </div>
+
 
     </div>
 
@@ -56,7 +53,7 @@
                 <th></th>
                 </thead>
                 <tbody>
-                @foreach($registered as $registered)
+                @foreach($registereds as $registered)
                     <tr style="background-color:white;">
                         <td>{{$registered->user->name}}</td>
                         <td>{{$registered->user->studentid}}</td>
@@ -81,6 +78,9 @@
                 </tbody>
 
             </table>
+            <div class="text-center">
+  				{!! $registereds->links(); !!}
+  			</div>
         </div>
 
     </div>

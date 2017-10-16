@@ -4,23 +4,17 @@
 @section('main-content')
 
     <div class="row">
-        <div class="col-md-10">
+      <div class="col-md-8 col-md-offset-2" style="text-align:center;margin-bottom:10px;">
 
-            <h1>New STUDENTS Request</h1>
+      <h4><strong>All Requests For Membership</strong></h4>
 
-        </div>
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-12">
-            <hr>
-        </div>
+      </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <table class="table">
                 <thead style="background-color:white;">
-                <th>#</th>
+
                 <th>Name</th>
                 <th>Student Id</th>
                 <th>Email</th>
@@ -29,9 +23,9 @@
                 <th></th>
                 </thead>
                 <tbody>
-                @foreach($user as $user)
+                @foreach($users as $user)
                     <tr style="background-color:white;">
-                        <th>{{$user->id}}</th>
+
                         <td>{{$user->name}}</td>
                         <td>{{$user->studentid}}</td>
                         <td>{{$user->email}}</td>
@@ -46,6 +40,9 @@
                 </tbody>
 
             </table>
+            <div class="text-center">
+          {!! $users->links(); !!}
+        </div>
         </div>
 
     </div>

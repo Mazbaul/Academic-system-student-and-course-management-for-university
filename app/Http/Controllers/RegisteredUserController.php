@@ -8,6 +8,8 @@ Use App\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Illuminate\Support\MessageBag;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class RegisteredUserController extends Controller
 {
@@ -21,8 +23,8 @@ class RegisteredUserController extends Controller
      public function index()
      {
 
-        $registered=Registered::all();
-        return view('adminlte::registered.registered_student')->withRegistered($registered);
+        $registereds=Registered::orderBy('id', 'desc')->paginate(10);
+        return view('adminlte::registered.registered_student')->withRegistereds($registereds);
 
 
      }
@@ -47,10 +49,10 @@ class RegisteredUserController extends Controller
      }
 
      public function newstudentrequest(){
-       $user=User::Where('status','=','0')->get();
-       if(!($user->isempty()))
+       $users=User::Where('status','=','0')->orderBy('id', 'desc')->paginate(10);
+       if(!($users->isempty()))
       {
-         return view('adminlte::user.newstudent_request')->withUser($user);
+         return view('adminlte::user.newstudent_request')->withUsers($users);
      }
      else{
        Session::flash('error','No new request');
