@@ -7,6 +7,32 @@
 
 @section('main-content')
 <div class="row">
+  <div class="col-md-8 text-left" style="margin-bottom:10px;">
+
+  <h4><strong>All Application's For Certificate</strong></h4>
+
+  </div>
+    <div class="col-md-4 text-right">
+
+    <!--  {!! Form::open(['route' => 'registered.show']) !!}-->
+
+      <!-- search form (Optional) -->
+     <form action="{{ route('registered.show') }}" method="post" class="sidebar-form">
+       {{ csrf_field() }}
+          <div class="input-group">
+              <input type="text" name="student_id" class="form-control" placeholder="Student ID..."/>
+            <span class="input-group-btn">
+              <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+      </form>
+      <!-- /.search form -->
+
+
+    </div>
+
+</div>
+<div class="row">
     <div class="col-md-12">
         <table class="table">
             <thead style="background-color:white;">
