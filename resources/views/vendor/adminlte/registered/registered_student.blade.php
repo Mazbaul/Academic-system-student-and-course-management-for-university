@@ -22,17 +22,19 @@
   </div>
     <div class="col-md-4 text-right">
 
-      {!! Form::open(['route' => 'registered.show']) !!}
+    <!--  {!! Form::open(['route' => 'registered.show']) !!}-->
 
-       <div class="col-md-5">
-        {{ Form::text('student_id', null, ['class' => 'form-control ','placeholder'=>' studentid']) }}
-
-      </div>
-
-<div class="col-md-3 ">
-        {{ Form::submit('search', array('class' => 'btn btn-success btn-sm btn-block', 'style' => 'margin-top: 0px;')) }}
-</div>
-        {!! Form::close() !!}
+      <!-- search form (Optional) -->
+     <form action="{{ route('registered.show') }}" method="post" class="sidebar-form">
+       {{ csrf_field() }}
+          <div class="input-group">
+              <input type="text" name="student_id" class="form-control" placeholder="Student ID..."/>
+            <span class="input-group-btn">
+              <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+      </form>
+      <!-- /.search form -->
 
 
     </div>

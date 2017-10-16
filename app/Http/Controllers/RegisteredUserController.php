@@ -36,14 +36,14 @@ class RegisteredUserController extends Controller
         $user=User::where('studentid','=' ,$studentid)->get()->pluck('id');
      If(!($user->isempty()))
       {
-        $registered=Registered::Where('user_id', '=' ,$user)->get();
-        return view('adminlte::registered.registered_studentshow')->withRegistered($registered);
+        $registereds=Registered::Where('user_id', '=' ,$user)->get();
+        return view('adminlte::registered.registered_studentshow')->withRegistereds($registereds);
        }
        else{
 
-         $registered=Registered::all();
+         $registereds=Registered::orderBy('id', 'desc')->paginate(10);
          Session::flash('error','No Registered Student Found');
-         return view('adminlte::registered.registered_student')->withRegistered($registered);
+         return view('adminlte::registered.registered_student')->withRegistereds($registereds);
        }
 
      }
