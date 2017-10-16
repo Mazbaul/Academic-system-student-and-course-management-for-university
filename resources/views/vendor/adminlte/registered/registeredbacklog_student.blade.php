@@ -43,8 +43,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table">
-                <thead style="background-color:white;">
+            <table class="table  table-responsive table-inverse table-striped table-bordered table-hover">
+                <thead style="background-color:#f2dede;" >
                 <th>Course Code</th>
                 <th>Course Title</th>
                 <th>Student Id</th>
@@ -55,7 +55,7 @@
                 </thead>
                 <tbody>
                 @foreach($backlog as $backlog)
-                    <tr style="background-color:white;">
+                    <tr >
                         <td>{{$backlog->course_code}}</td>
                         <td>{{$backlog->course_name}}</td>
                         <td>{{$backlog->student_id}}</td>

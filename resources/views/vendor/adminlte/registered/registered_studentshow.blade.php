@@ -41,9 +41,9 @@
 
 </div>
     <div class="row">
-        <div class="col-md-12" style="background-color:white;">
-            <table class="table">
-                <thead >
+        <div class="col-md-12" >
+            <table class="table table-responsive table-inverse table-striped table-bordered table-hover">
+                <thead style="background-color:#f2dede;" >
                 <th>Name</th>
                 <th>Student Id</th>
                 <th>Email</th>
@@ -51,6 +51,8 @@
                 <th>Department</th>
                 <th>Registered for Year</th>
                 <th>Registered for Term</th>
+                <th>Bank Form Number</th>
+                <th></th>
                 </thead>
                 <tbody>
                 @foreach($registereds as $registered)
@@ -62,6 +64,16 @@
                         <td>{{$registered->user->department->name}}</td>
                         <td>{{$registered->year}}</td>
                         <td>{{$registered->term}}</td>
+                          <td>{{$registered->id}}</td>
+                        <td>
+                         @if(($registered->status) == '0')
+                        <a href="{{route('registered.update',$registered->id)}}" class="btn btn-sm btn-danger">Click to Verify</a>
+                         @else
+
+                         <span >Verified  <i class="fa fa-check-square-o fa-2x " aria-hidden="true"></i></span>
+
+                         @endif
+                        </td>
 
                     </tr>
                 @endforeach

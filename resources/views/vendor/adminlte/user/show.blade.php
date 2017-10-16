@@ -4,23 +4,18 @@
 @section('main-content')
 
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-10 text-center">
 
-            <h1>ALL STUDENTS OF  DEPARTMENT</h1>
-
-        </div>
-        <div class="col-md-2">
+            <h4><strong>ALL STUDENTS </strong></h4>
 
         </div>
-        <div class="col-md-12">
-            <hr>
-        </div>
+
     </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table">
-                <thead style="background-color:white;">
-                <th>#</th>
+            <table class="table table-responsive table-inverse table-striped table-bordered table-hover">
+                <thead style="background-color:#f2dede;" >
+
                 <th>Name</th>
                 <th>Student Id</th>
                 <th>Email</th>
@@ -30,8 +25,8 @@
                 </thead>
                 <tbody>
                 @foreach($user as $user)
-                    <tr style="background-color:white;">
-                        <th>{{$user->id}}</th>
+                    <tr>
+
                         <td>{{$user->name}}</td>
                         <td>{{$user->studentid}}</td>
                         <td>{{$user->email}}</td>

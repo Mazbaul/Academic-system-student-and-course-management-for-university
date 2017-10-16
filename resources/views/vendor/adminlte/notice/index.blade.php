@@ -28,19 +28,19 @@
     </div>
       <div class="row">
          <div class="col-md-12">
-             <table class="table">
-                 <thead style="background-color:white;">
+             <table class="table table-responsive  table-striped table-bordered table-hover">
+                 <thead style="background-color:#f2dede;">
 
                     <th>Tittle</th>
                     <th>Notice</th>
                     <th>Published Date</th>
                     <th></th>
                     <th></th>
-                    
+
                  </thead>
                  <tbody>
                    @foreach($notices as $notice)
-                       <tr style="background-color:white;">
+                       <tr >
 
                            <td>{!!$notice->tittle!!}</td>
                            <td>{!!substr($notice->notice,0,50)!!}{!!strlen($notice->notice)>50 ?"..........." :""!!}</td>

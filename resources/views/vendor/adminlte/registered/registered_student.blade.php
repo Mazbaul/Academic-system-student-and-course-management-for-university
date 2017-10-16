@@ -42,8 +42,8 @@
 </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table">
-                <thead style="background-color:white;">
+            <table class="table table-responsive table-inverse table-striped table-bordered table-hover">
+                <thead style="background-color:#f2dede;" >
                 <th>Name</th>
                 <th>Student Id</th>
                 <th>Email</th>
@@ -56,7 +56,7 @@
                 </thead>
                 <tbody>
                 @foreach($registereds as $registered)
-                    <tr style="background-color:white;">
+                    <tr >
                         <td>{{$registered->user->name}}</td>
                         <td>{{$registered->user->studentid}}</td>
                         <td>{{$registered->user->email}}</td>

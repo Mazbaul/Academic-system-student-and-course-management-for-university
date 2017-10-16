@@ -34,8 +34,8 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <table class="table">
-            <thead style="background-color:white;">
+        <table class="table table-responsive table-inverse table-striped table-bordered table-hover">
+            <thead style="background-color:#f2dede;" >
 
             <th>Name</th>
             <th>Student Id</th>
@@ -51,7 +51,7 @@
 
             @foreach($applicantinfo as $applicantinfo)
 
-                <tr style="background-color:white;">
+                <tr >
                     <td>{{$applicantinfo->user->name}}</td>
                     <td>{{$applicantinfo->user->studentid}}</td>
                     <td>{{$applicantinfo->user->academicssn}}</td>
