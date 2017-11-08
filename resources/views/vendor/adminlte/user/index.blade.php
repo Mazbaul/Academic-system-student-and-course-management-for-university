@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-md-12">
             <table class="table table-responsive  table-striped table-bordered table-hover">
-                <thead style="background-color:#f2dede;">
+                <thead style="background-color:#d9edf7;">
 
                 <th>Department Name</th>
                 <th>Total Student</th>
@@ -46,7 +46,7 @@
                         <td>{{$department->name}}</td>
                         <td>{{$department->users()->count()}}</td>
 
-                        <td><a href="{{route('users.show',$department->id)}}" class="btn btn-sm btn-success">VIEW ALL STUDENT</a> </td>
+                        <td><a href="{{route('users.show',$department->id)}}" class="btn  btn-primary btn-sm">VIEW ALL STUDENT</a> </td>
                     </tr>
                 @endforeach
 

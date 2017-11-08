@@ -25,7 +25,7 @@
       <!--  {!! Form::open(['route' => 'registered.show']) !!}-->
 
         <!-- search form (Optional) -->
-       <form action="{{ route('backlog.show') }}" method="post" class="sidebar-form">
+       <form action="{{ route('backlog.show') }}" method="post" >
          {{ csrf_field() }}
             <div class="input-group">
                 <input type="text" name="student_id" class="form-control" placeholder="Student ID..."/>

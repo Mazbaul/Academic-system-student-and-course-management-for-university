@@ -111,7 +111,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
 </div>
     <!-- Fixed navbar -->
-    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div id="navigation" class="navbar navbar-default navbar-fixed-top" style="background-color:#ecf0f5;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

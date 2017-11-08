@@ -54,7 +54,7 @@
 
 
 
-            {{ Form::submit('Add New Course', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
+            {{ Form::submit('Add New Course', array('class' => 'btn btn-primary btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
             {!! Form::close() !!}
 
         </div>
