@@ -1,7 +1,8 @@
 # projectv
-Academic system for versity in LARAVEL
+Academic system for university in LARAVEL
 
 # Features
+ - Admin and Student separate login system
  - Admin Dashboard and User Dashboard
  - Admin Approval system For User registration
  - Admin approval system for course registration and bank Features
