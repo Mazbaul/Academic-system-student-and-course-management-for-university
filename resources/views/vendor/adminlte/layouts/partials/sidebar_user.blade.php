@@ -34,10 +34,10 @@
         <ul class="sidebar-menu">
             <li class="header"></li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="{{ Request::is('home') ? "active" : "" }}"><a href="{{ url('/home') }}"> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li class="{{ Request::path() =='course' || Request::path() =='course/show'? "active" : "" }}"><a href="{{ url('/course') }}"> <span>Course Registration</span></a></li>
-            <li class="{{ Request::is('backlog') ? "active" : "" }}"><a href="{{ url('/backlog') }}"> <span>Backlog Course Registration</span></a></li>
-            <li class="{{ Request::is('certificate') ? "active" : "" }}"><a href="{{ url('/certificate') }}"> <span>Certificates</span></a></li>
+            <li class="{{ Request::is('home') ? "active" : "" }}"><a href="{{ url('/home') }}"><i class="fa fa-university"></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="{{ Request::path() =='course' || Request::path() =='course/show'? "active" : "" }}"><a href="{{ url('/course') }}"> <i class="glyphicon glyphicon-registration-mark"></i><span>Course Registration</span></a></li>
+            <li class="{{ Request::is('backlog') ? "active" : "" }}"><a href="{{ url('/backlog') }}"> <i class="glyphicon glyphicon-registration-mark"></i><span>Backlog Course Registration</span></a></li>
+            <li class="{{ Request::is('certificate') ? "active" : "" }}"><a href="{{ url('/certificate') }}"> <i class="fa fa-mortar-board"></i><span>Certificates</span></a></li>
 
 
 
@@ -52,6 +52,7 @@
                 </ul>
             </li> -->
         </ul><!-- /.sidebar-menu -->
+        
     </section>
     <!-- /.sidebar -->
 </aside>
